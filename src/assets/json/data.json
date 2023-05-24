@@ -1,0 +1,233 @@
+{
+  "biller": {
+    "accountNo": "*890076",
+    "amount": 50.00,
+    "accountList": [
+      {
+        "accountType": "Credit card (2.3% fee)",
+        "balance": "$365.27 available"
+      },
+      {
+        "accountType": "main checking(*4738)",
+        "balance": "$4,164.98 available"
+      }
+    ],
+    "dropDownDetails": [
+      {
+        "paymentType": "CREDIT CARD.",
+        "cardNo": 2246,
+        "fee": "(2.3% fee)",
+        "balance": "$365.27 available",
+        "arrives": "Arrives in minutes",
+        "faster": "⚡ Fastest option Available",
+        "selected": false
+      },
+      {
+        "paymentType": "MAIN CHECKING.",
+        "cardNo": "*4738",
+        "fee": "",
+        "balance": "$4,164.98 available",
+        "arrives": "Arrives in 1-3 days",
+        "faster": "",
+        "selected": true
+      }
+    ],
+    "recipient": "AT&T ",
+    "mobile": 7185551234,
+    "confirmation": 123456789,
+    "userLogo": "billerlogo.png",
+    "tickImage": "confirm.png",
+    "bankLogo": "Banklogo.jpg",
+    "dueDate": "Thu Mar 10 2023 12:59:32 GMT+0530 (India Standard Time)",
+    "subUserLogo": "al.jpg"
+  },
+  "sender": {
+    "accountNo": "*890076",
+    "amount": 88,
+    "accountList": [
+      {
+        "accountType": "Credit card(2.3% fee)",
+        "balance": "$365.27 available"
+      },
+      {
+        "accountType": "main checking(*4738)",
+        "balance": "$5,164.98 available"
+      }
+    ],
+    "dropDownDetails": [
+      {
+        "paymentType": "CREDIT CARD.",
+        "cardNo": 2246,
+        "fee": "(2.3% fee)",
+        "balance": "$365.27 available",
+        "arrives": "Arrives in minutes",
+        "faster": "⚡ Fastest option Available",
+        "selected": false
+      },
+      {
+        "paymentType": "MAIN CHECKING.",
+        "cardNo": "*4738",
+        "fee": "",
+        "balance": "$4,164.98 available",
+        "arrives": "Arrives in 1-3 days",
+        "faster": "",
+        "selected": true
+      }
+    ],
+    "paymentType": "MAIN CHECKING.",
+    "cardNo": 4738,
+    "fee": "(2.3% fee)",
+    "recipient": "Kat Simmons  ",
+    "balance": "$5,164.98 available",
+    "mobile": 7185551234,
+    "userLogo": "sendPayment.jpeg",
+    "confirmation": 123456789,
+    "enrolledAs": "Enrolled as Katherine",
+    "tickImage": "confirm.png",
+    "bankLogo": "Banklogo.jpg",
+    "zelleImage": "zelle.png",
+    "subUserLogo": "al.jpg"
+  },
+  "Requestor": {
+    "accountNo": "*890076",
+    "amount": 99,
+    "accountList": [
+      {
+        "accountType": "Credit card(2.3% fee)",
+        "balance": "$365.27 available"
+      },
+      {
+        "accountType": "main checking(*4738)",
+        "balance": "$5,164.98 available"
+      }
+    ],
+    "dropDownDetails": [
+      {
+        "paymentType": "CREDIT CARD.",
+        "cardNo": 2246,
+        "fee": "(2.3% fee)",
+        "balance": "$365.27 available",
+        "arrives": "Arrives in minutes",
+        "faster": "⚡ Fastest option Available",
+        "selected": false
+      },
+      {
+        "paymentType": "MAIN CHECKING.",
+        "cardNo": "*4738",
+        "fee": "",
+        "balance": "$4,164.98 available",
+        "arrives": "Arrives in 1-3 days",
+        "faster": "",
+        "selected": true
+      }
+    ],
+    "paymentType": "MAIN CHECKING.",
+    "cardNo": 4738,
+    "fee": "(2.3% fee)",
+    "balance": "$365.27 available",
+    "recipient": "Kat Simmons  ",
+    "mobile": 7185551234,
+    "userLogo": "sendPayment.jpeg",
+    "confirmation": 1234567890,
+    "enrolledAs": "Enrolled as Katherine",
+    "tickImage": "confirm.png",
+    "bankLogo": "Banklogo.jpg",
+    "zelleImage": "zelle.png",
+    "subUserLogo": "al.jpg"
+  },
+  "onboarding": {
+    "onboardingAddBills": {
+      "bills": [
+        {
+          "recipient": "AT&T",
+          "userLogo": "billerlogo.png",
+          "isSelected": false
+        },
+        {
+          "recipient": "Geico",
+          "userLogo": "geico.jpg",
+          "isSelected": false
+        },
+        {
+          "recipient": "SoFi",
+          "userLogo": "sofi.png",
+          "isSelected": false
+        },
+        {
+          "recipient": "Verizon",
+          "userLogo": "verizon.png",
+          "isSelected": false
+        },
+        {
+          "recipient": "Navient",
+          "userLogo": "navient.png",
+          "isSelected": false
+        }
+      ],
+      "moreBills": [
+        {
+          "recipient": "Hello Fresh",
+          "userLogo": "hellofresh.png"
+        },
+        {
+          "recipient": "State Farm",
+          "userLogo": "statefarm.png"
+        }
+      ]
+    }
+  },
+  "zelleonboarding": {
+    "accountSelection": {
+      "primaryAccountList": [
+        {
+          "accountType": "Checking 1",
+          "accountNo": "**********4738"
+        },
+        {
+          "accountType": "Savings",
+          "accountNo": "**********3946"
+        }
+      ]
+    }
+  },
+  "todo": {
+    "todoSummmary": {
+      "billPay": [
+        {
+          "recipient": "Navient",
+          "userLogo": "navient.png",
+          "amount": "$542.00",
+          "dueTime": 2,
+          "todoDue": true,
+          "paymentAvenue": "false"
+        },
+        {
+          "recipient": "SoFi",
+          "userLogo": "sofi.png",
+          "amount": "$208.58",
+          "dueTime": 4,
+          "zelleLimit": true,
+          "todoDue": true,
+          "paymentAvenue": "true"
+        },
+        {
+          "recipient": "Geico",
+          "userLogo": "geico.jpg",
+          "amount": "$542.00",
+          "dueTime": 5,
+          "todoDue": true,
+          "paymentAvenue": "false"
+        },
+        {
+          "recipient": "Verizon",
+          "userLogo": "verizon.png",
+          "amount": "$65.80",
+          "dueTime": 10,
+          "zelleLimit": true,
+          "todoDue": false,
+          "paymentAvenue": "true"
+        }
+      ]
+    }
+  }
+}

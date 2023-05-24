@@ -1,0 +1,59 @@
+@import '../../../styles.scss';
+
+.container {
+    padding-top: 48px;
+}
+
+.number {
+    font-weight: 600;
+    @include text-decoration;
+}
+
+.number-1 {
+    font-weight: 600;
+    @include text-decoration;
+}
+
+a {
+    text-decoration: none;
+   @include margin-bottom;
+
+    &:hover,
+    &.active {
+        @include hyper-line;
+    }
+}
+
+.otp {
+    .otp-input {
+        width: 32%;
+        font-size: 48px;
+        font-weight: 100;
+        text-align: center;
+        outline: none;
+        @include  otp-input;
+    }
+}
+
+input,
+input::placeholder {
+    font-size: large;
+}
+
+.hyperlink {
+    display: contents;
+    justify-content: space-evenly;
+}
+
+@media (min-width:320px) and (max-width:700px) {
+    .hyperlink {
+        display: contents;
+        margin-bottom: 24%;
+    }
+
+    .otp {
+        .otp-input {
+            width: 72%;
+        }
+    }
+}

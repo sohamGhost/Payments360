@@ -1,0 +1,73 @@
+@import "@angular/cdk/overlay-prebuilt";
+body {
+    background-color: #d1dee6;
+    font-family: 'Calibri', 'sans-serif';
+}
+
+@mixin important-style {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+@mixin child-container {
+    text-align: center;
+    height: 40px;
+}
+
+@mixin parent-container {
+
+    width: 100%;
+    color: rgb(255, 255, 255);
+    background-color: #29479e;
+    margin-bottom: 15px;
+    cursor: pointer;
+    transition: all 0.2s linear;
+
+    &:hover,
+    &.active {
+        background-color: #899cc9;
+    }
+
+}
+
+@mixin important-part {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50px;
+    border-radius: 70px;
+}
+ @mixin color-container{
+    color: gray;
+ }
+ @mixin color{
+    background-color: #d1dee6;
+ }
+ @mixin special-text{
+    color: #29479e;
+ }
+ @mixin syntax-color{
+    background-color: #eef1f3;;
+ }
+ @mixin  text-decoration{
+    color: black;
+ }
+ @mixin  margin-bottom{
+    color: #8b9bc9;
+ }
+ @mixin otp-input{
+    background-color: #d1dee6;
+    border: 2px solid #cbcbcc;
+    border-right: #544b4b;
+    border-left: #544b4b;
+    border-top: #544b4b;
+ }
+ @mixin hyper-line{
+    color: #899cc9;
+ }
+ @mixin dropdown {
+   background-color: #29479e;
+   color: white;
+ }

@@ -1,0 +1,151 @@
+@import '../../../styles.scss';
+
+
+.todo-parent {
+  position: relative;
+  height: 100%;
+  height: calc(100vh - 250px);
+}
+
+.todo-footer {
+  position: sticky;
+  bottom: 0;
+  z-index: 999;
+  background-color: #edf2f5;
+  padding: 10px 0px 40px;
+  min-width: 108%;
+  margin: 0px -16px -16px -16px;
+  overflow-y: hidden;
+  height: 100%;
+}
+
+
+
+.nav-bar__style {
+  //background-color: #edf2f514;
+  margin-bottom: -25px;
+}
+
+.biller-logo {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+}
+
+.add-biller__type {
+  color: #29479e;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.bill-pay-now {
+  color: #29479e;
+  font-size: 17px;
+  //margin-right: 23px;
+  text-align: end;
+}
+
+.bill-due-time {
+  color: grey;
+  font-size: 17px;
+}
+
+.bill-recipient {
+  font-size: 24px;
+}
+
+.bill-amount {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.due-soon-heading {
+  font-weight: bold;
+  font-size: 22px;
+}
+
+
+.upcoming-heading {
+  font-weight: bold;
+  font-size: 26px;
+}
+
+.tab-navigation {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.navigation {
+  padding: 10px;
+}
+
+.tab {
+  width: 100%;
+  cursor: pointer;
+  padding: 16px 0 8px;
+  background-color: rgb(215, 215, 215);
+  font-weight: bold;
+  border-top: 2px solid rgb(194, 194, 194);
+  border-bottom: none;
+  border-left: none;
+  border-right: none;
+  word-spacing: 0.5ch;
+  font-size: 20px;
+  
+}
+
+.tab.active {
+  color: #29479e;
+  border-top: 2px solid #29479e;
+}
+
+.overlapping-profile {
+  margin-left: -20px;
+}
+
+
+
+
+/* Place the navbar at the bottom of the page, and make it stick */
+// .navbar {
+//     background-color: rgb(83, 82, 82);
+//     overflow: hidden;
+//     position: fixed;
+//     bottom: 0;
+//     width: 100%;
+//   }
+
+//   /* Style the links inside the navigation bar */
+//   .navbar a {
+//     float: left;
+//     display: block;
+//     color: #f2f2f2;
+//     text-align: center;
+//     padding: 14px 16px;
+//     text-decoration: none;
+//     font-size: 17px;
+//   }
+
+//   /* Change the color of links on hover */
+//   .navbar a:hover {
+//     background-color: #ddd;
+//     color: black;
+//   }
+
+//   /* Add a color to the active/current link */
+//   .navbar a.active {
+//     background-color: #04AA6D;
+//     color: white;
+//   }
+
+// .footer{
+//     background-color: white;
+//     width: 100%;
+//     display: flex;
+//     align-items: center;
+//     justify-content: space-between;
+//     position: fixed;
+//     bottom: 0;
+//     right: 0;
+// }

@@ -1,0 +1,129 @@
+<!-----------Header--------------->
+<div class="todo-parent">
+    <div class="todo-due-parent">
+        <div class="d-flex align-items-center justify-content-between w-100">
+            <app-header [data]="header.screen1"></app-header>
+            <!-- <div class="col-md-8" >{{literal.addNewBiller}}</div> -->
+            <div>
+                <i class="bi bi-plus-circle"></i>
+                <a (click)="onSubmit(route.HOME)" class="add-biller__type">{{literal.addNewBiller}}</a>
+
+            </div>
+        </div>
+
+        <div class="due-soon-parent">
+            <!-- Due soon -->
+            <div class="due-soon-heading">
+                {{literal.dueSoon}}
+            </div>
+            <!-- Populating bill pay to-do list -->
+            <div class="bill-pay-list-container">
+                <div *ngFor="let item of todoBillsList">
+                    <div *ngIf="item.todoDue === true" class="d-flex flex-row justify-content-start gap-3 my-3 mb-3">
+                        <img class="biller-logo mr-2" src="{{item.userLogo}}">
+                        <div class="gap-8">
+                            <div class="bill-recipient">
+                                {{item.recipient}}
+                            </div>
+                            <div class="bill-due-time fw-5" *ngIf="item.todoDue">
+                                Due in {{item.dueTime}} days
+                            </div>
+                        </div>
+                        <div class="flex-grow-1"></div> <!-- Add this div for spacing -->
+                        <div>
+                            <div class="bill-amount">
+                                -{{item.amount}}
+                            </div>
+                            <div class="bill-pay-now" (click)="onSubmit(route.HOME)">
+                                {{literal.payNow}}
+                            </div>
+                        </div>
+                    </div>
+                    <hr *ngIf="item.todoDue === true">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <div class="todo-upcoming-parent my-5">
+            <!-- Upcoming -->
+            <div class="upcoming-heading">
+                {{literal.upcoming}}
+            </div>
+            <hr>
+
+            <div class="bill-pay-list-container">
+                <div *ngFor="let item of todoBillsList">
+                    <div *ngIf="item.todoDue === false" class="d-flex flex-row justify-content-start align-items-center gap-3 my-3 mb-3">
+                        <img class="biller-logo mr-2" src="{{item.userLogo}}">
+                        <div class="gap-8">
+                            <div class="bill-recipient">
+                                {{item.recipient}}
+                            </div>
+                            <div class="bill-due-time fw-5" *ngIf="item.todoDue">
+                                Due in {{item.dueTime}} days
+                            </div>
+                        </div>
+                        <div class="flex-grow-1"></div> <!-- Add this div for spacing -->
+                        <div>
+                            <div class="bill-amount">
+                                -{{item.amount}}
+                            </div>
+                            <div class="bill-pay-now" (click)="onSubmit(route.HOME)">
+                                {{literal.payNow}}
+                            </div>
+                        </div>
+                    </div>
+                    <hr *ngIf="item.todoDue === false" >
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="todo-footer overlapping-profile">
+    <div>
+        <div class="text text-center my-2 px-5  ">
+            <p360-button [type]="buttonType.SUBMIT" [data]="literal.payTodos" (click)="onSubmit(route.HOME)">
+            </p360-button>
+        </div> 
+    </div>
+    <div class="nav-bar__style">
+        <div class="tab-navigation">
+            <button class="tab" [class.active]="activeTab === 1" (click)="onSubmit(route.HOME)">
+                {{literal.accounts}}</button>
+            <button class="tab" [class.active]="activeTab === 2" (click)="onSubmit(route.HOME)">
+                {{literal.payments}}</button>
+            <button class="tab" [class.active]="activeTab === 3" (click)="onSubmit(route.HOME)">
+                {{literal.explore}}</button>
+            <button class="tab" [class.active]="activeTab === 4" (click)="onSubmit(route.HOME)">
+                {{literal.more}}</button>
+        </div>
+    </div>
+</footer>
+
+
+    
+<!----- Pay To-Do's ----->
+<!-- <div class="text text-center my-5">
+    <p360-button [type]="buttonType.SUBMIT" [data]="literal.payTodos" (click)="onSubmit(route.HOME)">
+    </p360-button>
+</div> -->
+
+
+<!-- </div> -->
+
+        <!-----Bottom Navbar ------>
+
+        <!-- <div class="navbar">
+            <a (click)="onSubmit(route.HOME)" class="add-biller__type">{{literal.accounts}}</a>
+            <a (click)="onSubmit(route.HOME)" class="add-biller__type">{{literal.payments}}</a>
+            <a (click)="onSubmit(route.HOME)" class="add-biller__type">{{literal.explore}}</a>
+            <a (click)="onSubmit(route.HOME)" class="add-biller__type">{{literal.more}}</a>
+         <footer>
+            <p>Accounts</p>
+            <p>Payments</p>
+            <p>Explore</p>
+            <p>More</p>
+        </footer> -->

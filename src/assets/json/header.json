@@ -1,0 +1,29 @@
+{
+  "billerheader": {
+    "screen1": "Amount Due",
+    "screen2": "Make a Payment",
+    "screen3": "OTP Screen",
+    "screen4": "Confirmation"
+  },
+  "senderheader": {
+    "screen1": "Amount to Pay",
+    "screen2": "Make a Payment",
+    "screen3": "OTP Screen",
+    "screen4": "Confirmation"
+  },
+  "requestorheader": {
+    "screen1": "Amount to Request",
+    "screen2": "Request a Payment",
+    "screen3": "OTP Screen",
+    "screen4": "Confirmation"
+  },
+  "onboardingheader": {
+    "screen1": "Add Bills"
+  },
+  "zelleonboardingheader": {
+    "screen1": "Select Primary Account"
+  },
+  "todoheader": {
+    "screen1": "To-Do"
+  }
+}
