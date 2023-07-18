@@ -19,14 +19,14 @@
         <div *ngIf="activeTab === 1">
             <div class="d-flex justify-content-around align-items-center gap-1 my-4 text-secondary">
                 {{recipientList.length}} bills&nbsp;found
-                <a (click)="onSubmit(route.HOME)" class="bill-tab__color">{{literal.findMoreBills}}</a>
+                <a (click)="onSubmit(route.FINDMOREBILLS)" class="bill-tab__color">{{literal.findMoreBills}}</a>
             </div>
         </div>
 
         <div *ngIf="activeTab === 2">
             <div class="d-flex justify-content-around align-items-center gap-1 my-4 text-secondary">
                 {{moreRecipientList.length}} bills&nbsp;found
-                <a (click)="onSubmit(route.HOME)" class="bill-tab__color">{{literal.findMoreBills}}</a>
+                <a (click)="onSubmit(route.FINDMOREBILLS)" class="bill-tab__color">{{literal.findMoreBills}}</a>
             </div>
         </div>
         <!-----------Populating Bills for Paid Recently--------------->
@@ -43,13 +43,13 @@
             </div>
         </div>
 
-        <!-----------Populating Bills for Paid Recently--------------->
+        <!-----------Populating Bills for Near you--------------->
         <div *ngIf="activeTab === 2">
             <div class="biller-container">
                 <div class="biller-item" *ngFor="let item of moreRecipientList">
                     <div *ngIf="searchText === '' || item.recipient.toLowerCase().includes(searchText)">
                         <div class="d-flex flex-column justify-content-start align-items-center gap-2 my-3">
-                            <img class="biller-logo" src="{{item.userLogo}}" (click)="onSelectedItems($event,item)">
+                            <img class="biller-logo" src="{{item.userLogo}}" (click)="onSelectedItems($event,item)" [ngClass]="{ 'selected': item.isSelected }">
                             <span class="biller-name">{{item.recipient}}</span>
                         </div>
                     </div>
@@ -97,7 +97,7 @@
     <div class="text text-center">
         <p360-button [type]="buttonType.SUBMIT" [data]="literal.addBillsButton"
             [disabled]="isButtonDisabled && (activeTab === 1 || activeTab === 2)"
-            (click)="isButtonDisabled ? null : onSubmit(route.HOME)">
+            (click)="isButtonDisabled ? null : onSubmit(route.BILLERCONFIRMATION)">
         </p360-button>
     </div>
 

@@ -3,7 +3,8 @@
     "screen1": "Amount Due",
     "screen2": "Make a Payment",
     "screen3": "OTP Screen",
-    "screen4": "Confirmation"
+    "screen4": "Confirmation",
+    "authenticate": "Authenticate"
   },
   "senderheader": {
     "screen1": "Amount to Pay",
@@ -25,5 +26,34 @@
   },
   "todoheader": {
     "screen1": "To-Do"
-  }
+  },
+  "permissionsheader": {
+    "screen1": "Your Permission, please"
+  },
+  "zellepermissionsheader": {
+    "screen1": "Your Permission, Please"
+  },
+  "userheader": {
+    "screen1": "Set up Payments 360 profile"
+  },
+  "zellesetuppaymentheader": {
+    "screen1": "Choose How to Receive Money"
+  },
+    "findmorebillsheader": {
+      "screen1": "Find more bills"
+    },
+  "selectaddbillsheader": {
+    "screen1": "Select bills to add"
+  },
+  "dashboardheader": {
+    "screen1": "Payments"
+  },
+  "successScreenHeader": {
+    "congratulations": "Congratulations"
+  },
+  "billerConfirmationHeader":  {
+
+    "congratulations":"Congratulations"
+
+     }
 }

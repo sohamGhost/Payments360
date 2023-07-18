@@ -13,7 +13,7 @@ export class AppComponent implements OnInit{
   constructor(
     private router: Router,
     private cdref: ChangeDetectorRef) {}
-    
+
   ngOnInit():void {
     this.cdref.detectChanges()
     this.router.navigate(['home'])

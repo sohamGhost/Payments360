@@ -1,5 +1,5 @@
 <!-- in img tag  remove height////////done
-    
+
     create a object for headertitle in json//////done
     AMOUNTFILED Should be use input for biller and sender as read only
     use dollar symbol $ prefix///done
@@ -7,7 +7,7 @@
     use mixin colour in style.scss//done
     2,4,8 mutlipe num /////////////done
     firefox /////////////done
-    
+
 
 
  -->
@@ -16,7 +16,7 @@
 
 <div class="navbar" *ngIf="literal">
     <div class="user-details">
-        <img *ngIf="paymentMode !==paymentType.BILLER" class="user-subprofile" src="{{subUserLogo}}">
+        <img *ngIf="paymentMode !==paymentType.BILLER" class="user-subprofile" [src]="subUserLogo">
         <img class="user-profile" [src]="getImage()" alt="">
         <h4>{{bill?.recipient}} {{bill?.accountNo}}</h4>
         <h5 class="text text-center">{{bill?.enrolledAs}}</h5>
@@ -61,5 +61,5 @@
         (click)="onSubmit(route.MAKEAPAYMENT)"></p360-button>
 </div>
 <div class="text text-center">
-    <p360-button [type]="buttonType.CANCEL" [data]="literal?.backButton" (click)="onSubmit(route.HOME)"></p360-button>
+    <p360-button [type]="buttonType.CANCEL" [data]="literal?.backButton" (click)="onSubmit(route.DASHBOARD)"></p360-button>
 </div>

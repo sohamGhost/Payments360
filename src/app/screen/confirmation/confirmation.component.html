@@ -27,7 +27,7 @@
                 <span *ngIf="paymentMode==paymentType.BILLER">{{literal.account}}:{{accountDetails.accountNo}}</span>
                 <span *ngIf="paymentMode!==paymentType.BILLER">{{mobile}}</span>
             </h6>
-           
+
         </div>
     </div>
     <hr>
@@ -46,7 +46,7 @@
     </nav>
 
     <div class="btncontainer">
-        <p360-button [type]="buttonType.SUBMIT" (click)="onSubmit(route.HOME)" [data]="literal.btnDone"></p360-button>
+        <p360-button [type]="buttonType.SUBMIT" (click)="onSubmit(route.DASHBOARD)" [data]="literal.btnDone"></p360-button>
         <p360-button [type]="buttonType.CANCEL" (click)="onSubmit(route.OTPSCREEN)" [data]="literal.btnCancel"></p360-button>
     </div>
 </div>

@@ -31,4 +31,76 @@ export class HomeComponent {
     this.service.user = val;
     this.router.navigate(['/todo']);
   }
+  onClick4(val: string) {
+    this.service.user = val;
+    this.router.navigate(['/startscreen']);
+  }
+
+  onClick5(val: string) {
+    this.service.user = val;
+    this.router.navigate(['/zellestartscreen']);
+  }
+
+  onClick6(val: string) {
+    this.service.user = val;
+    this.router.navigate(['/dashboard']);
+  }
+
+  onSuccessScreenClick(val: string) {
+    this.service.user = val;
+    this.router.navigate(['/successscreen']);
+  }
+
+  onGeneralOnboardingSuccessScreenClick(val: string) {
+    this.service.user = val;
+    this.router.navigate(['/generalonboardingsuccessscreen']);
+  }
+
+  // onfind(val:string) {
+  //   this.service.user = val;
+  //   this.router.navigate(['/findmorebills'])
+  // }
+
+
+  // onSelectAddBills(val:string) {
+  //   this.service.user = val;
+  //   this.router.navigate(['/selectaddbills'])
+  // }
+
+  // onSuccessFailure(val:string) {
+  //   this.service.user = val;
+  //   this.router.navigate(['/successfailure'])
+  // }
+
+  // onClick(val: string) {
+  //   this.service.user = val;
+  //   this.router.navigate(['/permissions']);
+
+  // }
+  // onclick(val: string) {
+  //   this.service.user = val;
+  //   this.router.navigate(['/zellepermissions']);
+
+  // }
+
+  // onclk(val: string) {
+  //   this.service.user = val;
+  //   this.router.navigate(['/startscreen']);
+  // }
+
+  // oncl(val: string) {
+  //   this.service.user = val;
+  //   this.router.navigate(['/zellestartscreen']);
+  // }
+
+  // onClick4(val: string) {
+  //   this.service.user = val;
+  //   this.router.navigate(['/setuppayment']);
+  // }
+  // onclick5(val: string) {
+  //   this.service.user = val;
+  //   this.router.navigate(['/zellesetuppayment']);
+  // }
+
+
 }

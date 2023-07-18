@@ -56,6 +56,13 @@ export class MakeAPaymentComponent implements OnInit {
   ) {
     this.paymentMode = this._data.user;
     this._paymentDetails(this.paymentMode);
+
+    this._api
+    .getSenderHeaderData()
+    .subscribe((data) => (this.header = data));
+    this._api
+    .getSenderLiteralData()
+    .subscribe((data) => (this.literal = data));
   }
 
   ngOnInit(): void {
@@ -83,6 +90,7 @@ export class MakeAPaymentComponent implements OnInit {
         this.selectedData = data.paymentType + data.balance;
       }
     });
+    console.log(this.paymentMode);
   }
 
   private _paymentDetails(payMode): void {
@@ -96,15 +104,15 @@ export class MakeAPaymentComponent implements OnInit {
           .subscribe((data) => (this.literal = data));
         break;
       }
-      case BillType.SENDER: {
-        this._api
-          .getSenderHeaderData()
-          .subscribe((data) => (this.header = data));
-        this._api
-          .getSenderLiteralData()
-          .subscribe((data) => (this.literal = data));
-        break;
-      }
+      // case BillType.SENDER: {
+      //   this._api
+      //     .getSenderHeaderData()
+      //     .subscribe((data) => (this.header = data));
+      //   this._api
+      //     .getSenderLiteralData()
+      //     .subscribe((data) => (this.literal = data));
+      //   break;
+      // }
       case BillType.REQUESTOR: {
         this._api
           .getRequestorHeaderData()

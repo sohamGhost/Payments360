@@ -1,7 +1,7 @@
 {
   "biller": {
     "accountNo": "*890076",
-    "amount": 50.00,
+    "amount": 542,
     "accountList": [
       {
         "accountType": "Credit card (2.3% fee)",
@@ -80,7 +80,7 @@
     "recipient": "Kat Simmons  ",
     "balance": "$5,164.98 available",
     "mobile": 7185551234,
-    "userLogo": "sendPayment.jpeg",
+    "userLogo": "katsimmons.png",
     "confirmation": 123456789,
     "enrolledAs": "Enrolled as Katherine",
     "tickImage": "confirm.png",
@@ -127,7 +127,7 @@
     "balance": "$365.27 available",
     "recipient": "Kat Simmons  ",
     "mobile": 7185551234,
-    "userLogo": "sendPayment.jpeg",
+    "userLogo": "katsimmons.png",
     "confirmation": 1234567890,
     "enrolledAs": "Enrolled as Katherine",
     "tickImage": "confirm.png",
@@ -141,37 +141,46 @@
         {
           "recipient": "AT&T",
           "userLogo": "billerlogo.png",
+          "billerAmount": 10,
           "isSelected": false
         },
         {
           "recipient": "Geico",
           "userLogo": "geico.jpg",
+          "billerAmount": 20,
           "isSelected": false
         },
         {
           "recipient": "SoFi",
           "userLogo": "sofi.png",
+          "billerAmount": 30,
           "isSelected": false
         },
         {
           "recipient": "Verizon",
           "userLogo": "verizon.png",
+          "billerAmount": 40.1,
           "isSelected": false
         },
         {
           "recipient": "Navient",
           "userLogo": "navient.png",
+          "billerAmount": 50.23,
           "isSelected": false
         }
       ],
       "moreBills": [
         {
           "recipient": "Hello Fresh",
-          "userLogo": "hellofresh.png"
+          "userLogo": "hellofresh.png",
+          "billerAmount": 60,
+          "isSelected": false
         },
         {
           "recipient": "State Farm",
-          "userLogo": "statefarm.png"
+          "userLogo": "statefarm.png",
+          "billerAmount": 70,
+          "isSelected": false
         }
       ]
     }
@@ -194,40 +203,200 @@
     "todoSummmary": {
       "billPay": [
         {
-          "recipient": "Navient",
-          "userLogo": "navient.png",
+          "recipient": "AT&T",
+          "userLogo": "billerlogo.png",
           "amount": "$542.00",
           "dueTime": 2,
           "todoDue": true,
-          "paymentAvenue": "false"
+          "zelleLimit": false,
+          "paymentAvenue": false
         },
         {
-          "recipient": "SoFi",
-          "userLogo": "sofi.png",
-          "amount": "$208.58",
+          "recipient": "Kat Simmons",
+          "userLogo": "katsimmons.png",
+          "amount": "$88",
           "dueTime": 4,
-          "zelleLimit": true,
+          "zelleLimit": false,
           "todoDue": true,
-          "paymentAvenue": "true"
+          "paymentAvenue": true
+        },
+        {
+          "recipient": "American Express Credit Card",
+          "userLogo": "amex.png",
+          "amount": "$612.00",
+          "dueTime": 5,
+          "todoDue": true,
+          "zelleLimit": false,
+          "paymentAvenue": false
         },
         {
           "recipient": "Geico",
           "userLogo": "geico.jpg",
           "amount": "$542.00",
-          "dueTime": 5,
-          "todoDue": true,
-          "paymentAvenue": "false"
+          "dueTime": 8,
+          "todoDue": false,
+          "zelleLimit": false,
+          "paymentAvenue": false
         },
         {
-          "recipient": "Verizon",
-          "userLogo": "verizon.png",
+          "recipient": "Schedulemyrent.com",
+          "userLogo": "schedulemyrent.png",
           "amount": "$65.80",
           "dueTime": 10,
           "zelleLimit": true,
           "todoDue": false,
-          "paymentAvenue": "true"
+          "paymentAvenue": true
         }
       ]
     }
+  },
+  "user": {
+    "emailId": "johndoe@gmail.com",
+    "mobile": 7185551234,
+    "tag": "Create a Zelle® Tag",
+    "dropDownDetails": [
+      {
+        "paymentType": "CREDIT CARD.",
+        "cardNo": 2246,
+        "fee": "(2.3% fee)",
+        "balance": "$365.27 available",
+        "arrives": "Arrives in minutes",
+        "faster": "⚡ Fastest option Available",
+        "selected": false
+      },
+      {
+        "paymentType": "MAIN CHECKING.",
+        "cardNo": "*4738",
+        "fee": "",
+        "balance": "$4,164.98 available",
+        "arrives": "Arrives in 1-3 days",
+        "faster": "",
+        "selected": true
+      }
+    ]
+  },
+  "zellesetuppayment": {
+    "accountSelection": {
+      "primaryAccountList": [
+        {
+          "accountType": "Phone",
+          "accountNo": "917-222-4367"
+        },
+        {
+          "accountType": "Email",
+          "accountNo": "alex.davis@gmail.com"
+        },
+        {
+          "accountType": "Create Zelle® Tag"
+        }
+      ]
+    }
+  },
+  "successfailure": {
+    "mobile": "718-555-1234"
+  },
+  "selectaddbills": {
+    "accNumbergasEnrg": "*5678",
+    "accNumberDirectTv": "*1235",
+    "addBillsList": {
+      "billerNetwork": [
+        {
+          "recipient": "RCN",
+          "billerAmount": 25,
+          "accNumber": "*9928",
+          "userLogo": "rcn.png"
+        }
+      ],
+      "creditReport": [
+        {
+          "recipient": "Waste Management",
+          "billerAmount": 14,
+          "accNumber": "*3342",
+          "userLogo": "Waste-Management-Logo.png"
+        }
+      ]
+    }
+  },
+  "Pendingtransactions": {
+    "amountrequested": "-$12.00"
+  },
+  "dashboard": {
+    "billAmount": "$312.81",
+    "searchImg": "search.png",
+    "favourites": [
+      {
+        "userLogo": "katsimmons.png",
+        "paymentAvenue": true
+      },
+      {
+        "userLogo": "billerlogo.png",
+        "paymentAvenue": false
+      },
+      {
+        "userLogo": "hellofresh.png",
+        "paymentAvenue": false
+      },
+      {
+        "userLogo": "amex.png",
+        "paymentAvenue": false
+      },
+      {
+        "userLogo": "verizon.png",
+        "paymentAvenue": false
+      },
+      {
+        "userLogo": "sofi.png",
+        "paymentAvenue": false
+      },
+      {
+        "userLogo": "statefarm.png",
+        "paymentAvenue": false
+      },
+      {
+        "userLogo": "Waste-Management-Logo.png",
+        "paymentAvenue": false
+      }
+    ],
+    "recentActivity": [
+      {
+        "userLogo": "navient.png",
+        "recipient": "Amex *22146",
+        "scheduleDate": 2,
+        "paymentAvenue": true,
+        "amount": "$112.22"
+      }
+    ],
+    "billsAndUtilities": [
+      {
+        "userLogo": "geico.jpg",
+        "amount": 100
+      },
+      {
+        "userLogo": "navient.png",
+        "amount": 154
+      },
+      {
+        "userLogo": "hellofresh.png",
+        "amount": 80
+      }
+    ],
+    "subscriptions": [
+      {
+        "userLogo": "hellofresh.png",
+        "ammount": 27.5
+      }
+    ],
+    "transfers": [
+      {
+        "userLogo": "geico.jpg",
+        "ammount": 220
+      }
+    ]
+  },
+  "successScreenData": {
+    "userLogo": "katsimmons.png",
+    "recipient": "Kat Simmons",
+    "dueTime": 4,
+    "amount": 88
   }
 }

@@ -4,7 +4,7 @@
 //create folder constants//done
 
 import { Component, ChangeDetectorRef } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 
 import { ApiService } from '../../service/api.service';
 import { BillType, ButtonType } from '../../common/constant/constant';
@@ -38,12 +38,27 @@ export class AmountToPayComponent {
     private _api: ApiService,
     private _changeDetector: ChangeDetectorRef,
     private _data: DataService,
-    private _router: Router
+    private _router: Router,
+    private _route: ActivatedRoute
   ) {
-    this.paymentMode = this._data.user;
-    this._paymentDetails(this.paymentMode);
-    this.subUserLogo += this._data.subUserLogo;
+    //this.paymentMode = this._data.user;
+    //this._paymentDetails(this.paymentMode);
+    // this.subUserLogo += this._data.subUserLogo;
     this.util = Utils;
+  }
+
+  ngOnInit() {
+    this._route.params.subscribe((params: Params) => {
+      this.paymentMode = params['paymentMode'];
+      if (!this.paymentMode) {
+        this.paymentMode = this._data.user;
+      }
+      this._paymentDetails(this.paymentMode);
+    });
+
+    this.subUserLogo += this._data.subUserLogo;
+    //console.log(this._data.subUserLogo);
+    console.log(this.paymentMode);
   }
 
   private _paymentDetails(payMode): void {
@@ -112,6 +127,7 @@ export class AmountToPayComponent {
     if (this.bill) {
       this.imagePath = environment.imagePath + this.bill.userLogo;
     }
+    this.subUserLogo = this._data.subUserLogo;
     this._changeDetector.markForCheck();
     return this.imagePath;
   }

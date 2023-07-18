@@ -1,0 +1,61 @@
+<!-----------Header--------------->
+<div class="todo-parent">
+
+    <div class="todo-due-parent">
+        <div class="d-flex align-items-center justify-content-between w-100">
+            <app-header [data]="header.screen1"></app-header>
+            <!-- <div class="col-md-8" >{{literal.addNewBiller}}</div> -->
+            <div>
+                <i (click)="onSubmit(route.ADDBILLS)" class="bi bi-plus-circle" style="color: #29479e; font-size: 20px;"></i>&nbsp;
+                <a (click)="onSubmit(route.ADDBILLS)" class="add-biller__type">{{literal.addNewBiller}}</a>
+            </div>
+        </div>
+
+        <div class="due-soon-parent">
+            <!-- Due soon -->
+            <div class="due-soon-heading">
+                {{literal.dueSoon}}
+            </div>
+            <!-- Populating bill pay to-do list -->
+            <!-- for passing the data from parent to the child -->
+            <!-- <app-todo-due-soon (onItemSelect)="onItemSelect($event)" [todoBillsList]="todoBillsList" [showRadioButtons]="showRadioButtons"></app-todo-due-soon> -->
+            <app-todo-due-soon [showButtons]="showButtons"></app-todo-due-soon>
+        </div>
+    </div>
+    <div class="todo-upcoming-parent mt-5" *ngIf="todoDueCount > 0">
+        <!-- Upcoming -->
+        <div class="upcoming-heading">
+            {{literal.upcoming}}
+        </div>
+        <hr>
+        <app-todo-upcoming [showButtons]="showButtons"></app-todo-upcoming>
+    </div>
+
+</div>
+
+<div class="todo-footer overlapping-profile">
+
+    <!-- populating selected billers -->
+    <div *ngIf="selectedItems.length > 0" class="d-flex justify-content-between align-items-center mx-3">
+
+        <span class="pl-6">{{selectedItems.length}} selected</span>
+        <div>
+            <img *ngFor="let item of selectedItems" class="user-profile overlapping-profile" src="{{item.userLogo}}">
+        </div>
+    </div>
+
+    <div class="text text-center my-2 px-5  ">
+        <p360-button [type]="buttonType.SUBMIT" [data]="showButtons ? literal.reviewTodos : literal.payTodos" (click)="toggleRadioButtons();"></p360-button>
+        <!-- <p360-button  [type]="buttonType.SUBMIT" [data]="literal.payTodos" (click)="onSubmit(route.TODOMULTIPAY)"></p360-button> -->
+    </div>
+    <div class="tab-navigation">
+        <button class="tab pl-2" [class.active]="activeTab === 1" (click)="onSubmit(route.HOME)"><i class="bi bi-person bill-icon"></i>
+            <span>{{literal.accounts}}</span></button>
+        <button class="tab" [class.active]="activeTab === 2" (click)="onSubmit(route.HOME)"><i class="bi bi-currency-dollar bill-icon"></i>
+            <span>{{literal.payments}}</span></button>
+        <button class="tab" [class.active]="activeTab === 3" (click)="onSubmit(route.HOME)"><i class="bi bi-files bill-icon"></i>
+            <span>{{literal.explore}}</span></button>
+        <button class="tab" [class.active]="activeTab === 4" (click)="onSubmit(route.HOME)"><i class="bi bi-grid-fill bill-icon"></i>
+            <span>{{literal.more}}</span></button>
+    </div>
+</div>

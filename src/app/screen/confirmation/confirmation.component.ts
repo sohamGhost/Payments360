@@ -38,19 +38,22 @@ export class ConfirmationComponent implements OnInit {
   util: Utils;
   // dropDownDetails: any;
   item: any;
-  
+
   constructor(
     private _api: ApiService,
     private _data: DataService,
     private _datepipe: DatePipe,
-    private _router: Router,  
+    private _router: Router,
     ) {
 
     this.myDate = this._datepipe.transform(this.myDate, 'EEEE, MMM d, y');// use util method
     this.paymentMode = this._data.user;
     this._paymentDetails(this.paymentMode);
+    console.log(this.paymentMode);
     this.subUserLogo += this._data.subUserLogo;
 
+    this._api.getRequestorHeaderData().subscribe((data)=>(this.header=data));
+    this._api.getSenderLiteralData().subscribe((data) => (this.literal = data));
   }
 
   ngOnInit(): void {
@@ -60,12 +63,12 @@ export class ConfirmationComponent implements OnInit {
     this.bankLogo += this._data.bankLogo;
     this.dueDate=this._data.dueDate;
     this.tickImage += this._data.tickImage;
-    this.userLogo += this._data.userLogo;   
+    this.userLogo += this._data.userLogo;
     this.subUserLogo += this.subUserLogo;
 
   }
 
-  private _paymentDetails(payMode):void {
+  public _paymentDetails(payMode):void {
 
     switch (payMode) {
       case BillType.BILLER: {
@@ -73,11 +76,11 @@ export class ConfirmationComponent implements OnInit {
         this._api.getBillerLiteralData().subscribe((data) => this.literal = data);
         break;
       }
-      case BillType.SENDER: {
-        this._api.getRequestorHeaderData().subscribe((data)=>(this.header=data));
-        this._api.getSenderLiteralData().subscribe((data) => (this.literal = data));
-        break;
-      }
+        // case BillType.SENDER: {
+        //   this._api.getRequestorHeaderData().subscribe((data)=>(this.header=data));
+        //   this._api.getSenderLiteralData().subscribe((data) => (this.literal = data));
+        //   break;
+        // }
       case BillType.REQUESTOR: {
         this._api.getRequestorHeaderData().subscribe((data)=>(this.header=data));
         this._api.getRequestorLiteralData().subscribe((data) => (this.literal = data));

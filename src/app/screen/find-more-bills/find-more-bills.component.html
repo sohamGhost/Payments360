@@ -1,0 +1,44 @@
+<div class="parent">
+    <h1 class="bills">{{header.screen1}}</h1>
+    <h3 class="pay">{{literal.pay}}</h3>
+    <div class="bg-light box">
+        <div class="network">
+            <input type="checkbox" id="" name="" value="" [checked]="checkbox1" (change)="onCheckbox1Change()">
+
+            <label for="" class="network">&nbsp; {{literal.biller}}</label>
+        </div>
+        <h6 class="profiles">{{literal.profiles}}</h6>
+
+        <h6 class="service">•&nbsp;{{literal.service}}</h6>
+        <h6 class="easier">•&nbsp;{{literal.easier}}</h6>
+
+
+    </div>
+
+
+
+    <div class="bg-light box">
+
+        <div class="credit">
+            <input type="checkbox" id="" name="" value="" [checked]="checkbox2" (change)="onCheckbox2Change()">
+            <label for="" class="credit">&nbsp; {{literal.credit}}</label>
+
+            <h6 class="report">{{literal.report}} </h6>
+
+
+        </div>
+        <h6 class="service">•&nbsp;{{literal.creditscore}}</h6>
+        <h6 class="score">•&nbsp;{{literal.score}}</h6>
+        <h6 class="easier">•&nbsp;{{literal.shared}}</h6>
+    </div>
+</div>
+
+
+
+<div class="btncontainer">
+    <p360-button [type]="buttonType.SUBMIT" [data]="literal.btnBills" [disabled]="!checkbox1 && !checkbox2"
+        (click)="onSubmit(route.SELECTADDBILLS)"></p360-button>
+
+    <p360-button [type]="buttonType.CANCEL" (click)="cancelSelection()" [data]="literal.btnCancel"></p360-button>
+
+</div>
