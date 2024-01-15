@@ -23,6 +23,11 @@ import { GeneralOnboardingSuccessComponent } from './screen/general-onboarding-s
 import { BillerConfirmationComponent } from './screen/biller-confirmation/biller-confirmation.component';
 import { ZellePayAuthenticationComponent } from './screen/zelle-pay-authentication/zelle-pay-authentication.component';
 import { BillPayAuthenticationComponent } from './screen/bill-pay-authentication/bill-pay-authentication.component';
+import { RecentActivityComponent } from './screen/recent-activity/recent-activity.component';
+import { AmountToSplitComponent } from './screen/amount-to-split/amount-to-split.component';
+import { SplitPaymentConfirmationComponent } from './screen/split-payment-confirmation/split-payment-confirmation.component';
+import { SplitPaymentComponent } from './screen/split-payment/split-payment.component';
+import { SplitReviewComponent } from './screen/split-review/split-review.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -55,6 +60,11 @@ const routes: Routes = [
   { path: 'billerconfirmation', component:BillerConfirmationComponent},
   { path: 'zellepayauthentication', component:ZellePayAuthenticationComponent},
   { path: 'billpayauthentication', component:BillPayAuthenticationComponent},
+  {path:'recentactivity',component:RecentActivityComponent},
+  {path:'amounttosplit',component:AmountToSplitComponent},
+  {path:'splitpaymentconfirmation',component:SplitPaymentConfirmationComponent},
+  {path:'splitpayment',component:SplitPaymentComponent},
+  {path:'splitreview',component:SplitReviewComponent}
 ];
 
 @NgModule({

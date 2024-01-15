@@ -38,9 +38,11 @@ import { BillerConfirmationComponent } from './screen/biller-confirmation/biller
 import { BillPayAuthenticationComponent } from './screen/bill-pay-authentication/bill-pay-authentication.component';
 import { ZellePayAuthenticationComponent } from './screen/zelle-pay-authentication/zelle-pay-authentication.component';
 import { SelectedBillerService } from './service/selected-biller.service';
-import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
-import { HttpClient } from '@angular/common/http';
+import { RecentActivityComponent } from './screen/recent-activity/recent-activity.component';
+import { AmountToSplitComponent } from './screen/amount-to-split/amount-to-split.component';
+import { SplitPaymentConfirmationComponent } from './screen/split-payment-confirmation/split-payment-confirmation.component';
+import { SplitPaymentComponent } from './screen/split-payment/split-payment.component';
+import { SplitReviewComponent } from './screen/split-review/split-review.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -72,7 +74,12 @@ import { HttpClient } from '@angular/common/http';
     GeneralOnboardingSuccessComponent,
     BillerConfirmationComponent,
     BillPayAuthenticationComponent,
-    ZellePayAuthenticationComponent
+    ZellePayAuthenticationComponent,
+    RecentActivityComponent,
+    AmountToSplitComponent,
+    SplitPaymentConfirmationComponent,
+    SplitPaymentComponent,
+    SplitReviewComponent
   ],
   imports: [
     BrowserModule,
@@ -83,15 +90,6 @@ import { HttpClient } from '@angular/common/http';
     DatePipe,
     OverlayModule,
     NgbModule,
-    TranslateModule.forRoot(
-      {
-        loader: {
-          provide: TranslateLoader,
-          useFactory: (http:HttpClient) => {return new TranslateHttpLoader(http, './assets/i18n/', '.json');},
-          deps: [HttpClient]
-        }
-      }
-    )
   ],
   providers: [SelectedItemsService,SelectedBillerService],
   bootstrap: [AppComponent],

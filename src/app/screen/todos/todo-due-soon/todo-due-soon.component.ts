@@ -5,6 +5,8 @@ import { ApiService } from 'src/app/service/api.service';
 import { DataService } from 'src/app/service/data.service';
 import { SelectedItemsService } from 'src/app/service/selected-items.service';
 import { environment } from 'src/environments/environment';
+import { IPayments } from 'src/app/common/interface/interface';
+import { delay } from 'rxjs';
 
 @Component({
   selector: 'app-todo-due-soon',
@@ -22,6 +24,10 @@ export class TodoDueSoonComponent implements OnInit {
   route = RoutingLinks;
   paymentMode: string;
   public todoBillsList: Array<any> = [];
+  public todoList: Array<IPayments> = [];
+  public todoNewList: IPayments[]= [];
+  item: {};
+  
   // selectedItems: Array<any> = []
 
   constructor(
@@ -32,7 +38,7 @@ export class TodoDueSoonComponent implements OnInit {
   ) {
 
     // this.fetchTodoData();
-
+    this.item = {};
     this._api
     .getTodoLiteralData()
     .subscribe((data: any) => {
@@ -55,21 +61,30 @@ export class TodoDueSoonComponent implements OnInit {
     this._router.navigate([route, paymentMode]);
   }
 
-  private fetchTodoData(): void {
-    this._api.getTodoData().subscribe((data: any) => {
+  async fetchTodoData() {
+    await this._api.getTodoData().subscribe((data: any) => {
       this.todoBillsList = data.todoSummmary.billPay;
       this.todoBillsList.forEach(item => item.userLogo = this.userLogo + item.userLogo);
-      console.log(this.todoBillsList);
+    });
 
+    //userlogo currently fetched from local list object in json
+    //delay and userLogo setup must be removed when its fetched from the backend
+    await this._api.getBackendTodoData().pipe(delay(300)).subscribe((data: IPayments[]) => {
+        this.todoNewList = data;
+        this.todoNewList.forEach((item, index) => {
+            item.userLogo = this.todoBillsList[index].userLogo;
+        });
+        this.todoNewList.forEach(item => {
+            this.todoList.push(item);
+        });
+      console.log(this.todoList);
     });
   }
 
   onSelectionChange(item): void {
      item.isSelected = !item.isSelected;
-    // const selectedItems = this.todoBillsList.filter((item) => item.isSelected);
     this.selectedItemsService.updateSelectedItemsDueSoon(item);
-    // this.selectedItemsService.updateSelectedItemsDueSoon(selectedItems);
-    // console.log(this.selectedItems);
+
   }
 
 }

@@ -167,6 +167,18 @@
           "userLogo": "navient.png",
           "billerAmount": 50.23,
           "isSelected": false
+        },
+        {
+          "recipient": "RCN",
+          "userLogo": "rcn.png",
+          "billerAmount": 25,
+          "isSelected": false
+        },
+        {
+          "recipient": "Waste Management",
+          "userLogo": "Waste-Management-Logo.png",
+          "billerAmount": 14,
+          "isSelected": false
         }
       ],
       "moreBills": [
@@ -233,7 +245,7 @@
           "recipient": "Geico",
           "userLogo": "geico.jpg",
           "amount": "$542.00",
-          "dueTime": 8,
+          "dueTime": 5,
           "todoDue": false,
           "zelleLimit": false,
           "paymentAvenue": false
@@ -398,5 +410,132 @@
     "recipient": "Kat Simmons",
     "dueTime": 4,
     "amount": 88
+  },
+  "addNewScreenData": {
+    "item": [
+      {
+        "itemLogo": "creditCard.png",
+        "itemName": "Credit Card",
+        "itemDescription": "Connect a card to automatically ppulate recurring bill and subscriptions."
+      },
+      {
+        "itemLogo": "bills.png",
+        "itemName": "Bill",
+        "itemDescription": "Recurring expenses such as utility bills, wireless, etc."
+      },
+      {
+        "itemLogo": "subscription.png",
+        "itemName": "Subscription",
+        "itemDescription": "Manually add a subscription, membership, etc."
+      },
+      {
+        "itemLogo": "transfer.png",
+        "itemName": "Transfer",
+        "itemDescription": "Set up a recurring tranfer to another account"
+      }
+    ]
+  },
+  "recentActivityData": {
+    "payments": [
+      {
+        "enrollType": "billPay",
+        "recipientName": "Amex *2246",
+        "userLogo": "amex.png",
+        "paymentDate": "Schedule in 2 days",
+        "transactionAmount": "112.22",
+        "status": "Schedule",
+        "paymentType": "none"
+      },
+      {
+        "enrollType": "zelle",
+        "recipientName": "Animee Zeigler",
+        "userLogo": "katsimmons.png",
+        "paymentDate": "August 17th via Zelle®",
+        "transactionAmount": "50.00",
+        "status": "Pending",
+        "paymentType": "none"
+      },
+      {
+        "enrollType": "billPay",
+        "recipientName": "Chill's Bar & Grill",
+        "userLogo": "chilli.png",
+        "paymentDate": "May 5th",
+        "transactionAmount": "95.70",
+        "status": "Paid",
+        "paymentType": "none"
+      },
+      {
+        "enrollType": "billPay",
+        "recipientName": "Hulu",
+        "userLogo": "geico.jpg",
+        "paymentDate": "June 23th",
+        "transactionAmount": "9.99",
+        "status": "Paid",
+        "paymentType": "send"
+      },
+      {
+        "enrollType": "billPay",
+        "recipientName": "CareWell Urgent Care",
+        "userLogo": "person.png",
+        "paymentDate": "January 26th",
+        "transactionAmount": "100.00",
+        "status": "Paid",
+        "paymentType": "none"
+      },
+      {
+        "enrollType": "zelle",
+        "recipientName": "Zach Gomez",
+        "userLogo": "verizon.png",
+        "paymentDate": "July 29th via Zelle®",
+        "transactionAmount": "120.22",
+        "status": "Paid",
+        "paymentType": "recieve"
+      }
+    ]
+  },
+  "splitData": {
+    "zelleImage": "zelle.png",
+    "transactionAmount": "98.70",
+    "suggestedRecipientsList": [
+      {
+        "recipient": "Tim McClain",
+        "userLogo": "katsimmons.png",
+        "phoneNo": "718-555-3562",
+        "enrollType": "zelle"
+      },
+      {
+        "recipient": "Kat Simmons",
+        "userLogo": "verizon.png",
+        "phoneNo": "718-555-1234",
+        "enrollType": "zelle"
+      },
+      {
+        "recipient": "Sam Thaley",
+        "userLogo": "SamThaley.jpg",
+        "phoneNo": "718-555-7351",
+        "enrollType": "zelle"
+      }
+    ]
+  },
+  "amountToSplitData": {
+    "transactionAmount": "98.70",
+    "zelleLogo": "zelle.png",
+    "recipients": [
+      {
+        "recipientName": "You",
+        "userLogo": "person.png",
+        "phoneNumber": "718-555-1224"
+      },
+      {
+        "recipientName": "Kat Simmons",
+        "userLogo": "katsimmons.png",
+        "phoneNumber": "718-555-1234"
+      },
+      {
+        "recipientName": "Tim McClain",
+        "userLogo": "amex.png",
+        "phoneNumber": "718-555-1234"
+      }
+    ]
   }
 }

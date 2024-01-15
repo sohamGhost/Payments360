@@ -36,7 +36,7 @@ export class ConfirmationComponent implements OnInit {
   tickImage: string = environment.imagePath;
   userLogo: string = environment.imagePath;
   util: Utils;
-  // dropDownDetails: any;
+  dropDownDetails: any;
   item: any;
 
   constructor(
@@ -76,11 +76,11 @@ export class ConfirmationComponent implements OnInit {
         this._api.getBillerLiteralData().subscribe((data) => this.literal = data);
         break;
       }
-        // case BillType.SENDER: {
-        //   this._api.getRequestorHeaderData().subscribe((data)=>(this.header=data));
-        //   this._api.getSenderLiteralData().subscribe((data) => (this.literal = data));
-        //   break;
-        // }
+        case BillType.SENDER: {
+          this._api.getRequestorHeaderData().subscribe((data)=>(this.header=data));
+          this._api.getSenderLiteralData().subscribe((data) => (this.literal = data));
+          break;
+        }
       case BillType.REQUESTOR: {
         this._api.getRequestorHeaderData().subscribe((data)=>(this.header=data));
         this._api.getRequestorLiteralData().subscribe((data) => (this.literal = data));

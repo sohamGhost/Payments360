@@ -1,58 +1,142 @@
 <div class="dashborad-parent">
-<!-- header-container -->
+    <!-- header-container -->
+<header>
     <div class="d-flex align-items-center justify-content-between w-100">
-        <app-header [data]="header.screen1"></app-header>
+        <app-header [data]="header.screen1" i18n="@@header"></app-header>
         <div>
             <i class="bi bi-plus-circle" style="color: #29479e; font-size: 20px;"></i>&nbsp;
             <i class="bi bi-lightbulb-fill" style="color: #29479e; font-size: 20px;"></i>
         </div>
     </div>
-<!-- favouritesList-container -->
+    <!-- favouritesList-container -->
     <div class="d-flex justify-content-start align-items-center gap-2 horizontal_scroll">
-        <div><img class="favourites-logo" src={{searchLogo}}></div>
-        <div class="favourite-item" *ngFor ="let item of favouritesList">
+        <div><img class="favourites-logo" src={{searchLogo}} alt="search"></div>
+        <div class="favourite-item" *ngFor="let item of favouritesList">
             <div (click)="onClick(route.AMOUNTTOPAY, item.paymentAvenue ? 'sender': 'biller')">
                 <!-- <div *ngIf = "item.paymentAvenue" (click)="onSubmit(route.ZELLESTARTSCREEN)"></div> -->
-                <img class="favourites-logo" src="{{item.userLogo}}">
+                <img class="favourites-logo" src="{{item.userLogo}}" alt="userLogo">
             </div>
         </div>
     </div>
-<!-- todo-container -->
+</header>
+    <!-- todo-container -->
     <div class="todo-container">
-        <div class="todo-header">{{literal.todo }}</div>
-        <div class="todo-due-soon"><app-todo-due-soon></app-todo-due-soon></div>
-        <!-- Displaying the length of todoBillsList -->
-        <div class="todo-viewAll" (click)="onSubmit(route.TODO)">View All ({{todoListLength}})</div>
+        <div class="todo-header" i18n="@@todo_header">{{literal.todo}}</div>
+        <div class="todo-due-soon">
+            <app-todo-due-soon></app-todo-due-soon>
+        </div>
+        <!-- Displaying the length of todoList -->
+        <div class="todo-viewAll">
+            <div (click)="onSubmit(route.TODO)" i18n="@@view_all">View All ({{todoListLength}})</div>
+        </div>
     </div>
-<!-- recentactivity-container -->
+    <!-- recentactivity-container -->
     <div class="recentactivity-container">
         <div class="d-flex align-items-center justify-content-between w-100">
-            <div class="recentactivity-header">{{literal.recentActivity}}</div>
-            <i class="bi bi-arrow-right" style="color: #29479e; font-size: 20px;"></i>
+            <div class="recentactivity-header" i18n="@@recentactivity_header">{{literal.recentActivity}}</div>
+            <i class="bi bi-arrow-right" style="color: #29479e; font-size: 20px;"
+                (click)="onSubmit(route.RECENTACTIVITY)"></i>
         </div>
-      <div class="recentactivity-txt"><i>{{literal.recentActivityTxt}}</i></div>
+        <ng-template [ngIf]="recentActivityLength>0" [ngIfThen]="itemFound" [ngIfElse]="noItemFound">
+        </ng-template>
+        <ng-template #itemFound>
+            <div class="recent-activity-items" *ngFor="let item of recentActivityList.slice(0,2)">
+                <div class="d-flex justify-content-between align-items-center gap-2 my-3 mb-3">
+
+                    <div class="d-flex gap-2 flex-grow-1">
+                        <img class="biller-logo mr-2" src="{{item.recentActivityLogo}}" alt="{{item.recipientName}}">
+                        <div>
+                            <div class="recipient-name">{{item.recipientName}}</div>
+                            <ng-template [ngIf]="item.status==='Schedule'" [ngIfThen]="scheduleDate" [ngIfElse]="date">
+                            </ng-template>
+                            <ng-template #scheduleDate>
+                                <div class="bill-date-schedule">
+                                    {{item.paymentDate}}
+                                </div>
+                            </ng-template>
+                            <ng-template #date>
+                                <div class="bill-date">
+                                    {{item.paymentDate}}
+                                </div>
+                            </ng-template>
+
+                        </div>
+                    </div>
+                    <div class="bill-amount-container">
+                        <ng-template [ngIf]="item.paymentType==='send'" [ngIfThen]="send" [ngIfElse]="recieve">
+                        </ng-template>
+
+                        <ng-template #send>
+                            <div class="bill-paymentType-send">
+                                -${{item.transactionAmount}}
+                            </div>
+                        </ng-template>
+
+                        <ng-template #recieve>
+                            <ng-template [ngIf]="item.paymentType==='none'" [ngIfThen]="none"
+                                [ngIfElse]="recieveDefault">
+                            </ng-template>
+                        </ng-template>
+
+                        <ng-template #none>
+                            <div class="bill-paymentType-none">
+                                ${{item.transactionAmount}}
+                            </div>
+                        </ng-template>
+                        <ng-template #recieveDefault>
+                            <div class="bill-paymentType-recieve">
+                                +${{item.transactionAmount}}
+                            </div>
+                        </ng-template>
+
+
+                        <ng-template [ngIf]="item.status==='Pending'" [ngIfThen]="pending" [ngIfElse]="schedule">
+                        </ng-template>
+                        <ng-template #pending>
+                            <div class="bill-status-pending">
+                                {{item.status}}
+                            </div>
+                        </ng-template>
+                        <ng-template #schedule>
+                            <ng-template [ngIf]="item.status==='Schedule'" [ngIfThen]="schedules">
+                            </ng-template>
+                        </ng-template>
+                        <ng-template #schedules>
+                            <div class="bill-status-schedule">
+                                Edit or Cancel
+                            </div>
+                        </ng-template>
+                    </div>
+                </div>
+            </div>
+        </ng-template>
+
+        <ng-template #noItemFound>
+            <div class="recentactivity-txt"><i>{{literal.recentActivityTxt}}</i></div>
+        </ng-template>
+
     </div>
-<!-- autopayments-container -->
+    <!-- autopayments-container -->
     <div class="autopayments-container">
         <div class="d-flex align-items-center justify-content-between w-100">
             <div class="autopayments-header w-20">
-                {{literal.autoPayments}}
-                <p class="m-0">{{literal.autoPaymentsDuration}}</p>
+                <span class="autopayments-header w-20" i18n="@@autopayments_header">{{literal.autoPayments}}</span>
+                <p class="m-0" i18n="@@autopayments_duration">{{literal.autoPaymentsDuration}}</p>
             </div>
-            <div class="autopayments-manage">{{literal.manage}}</div>
+            <div class="autopayments-manage" i18n="@@autopayments_manage">{{literal.manage}}</div>
         </div>
         <div class="autopayments-btn-txt">
             <label class="switch">
                 <input type="checkbox">
                 <span class="slider round"></span>
             </label>
-            <i>{{literal.autoPaymentsBtnTxt}}</i>
+            <i i18n="@@autopayements_text">{{literal.autoPaymentsBtnTxt}}</i>
         </div>
     </div>
-<!-- bills-container -->
+    <!-- bills-container -->
     <div class="bills-container">
         <div class="d-flex flex-start justify-content-between">
-            <div class="billsandutilities-header">
+            <div class="billsandutilities-header" i18n="@@billsandutilities_header">
                 {{literal.billsAndUtilities}}
             </div>
             <div class="bill-amount" *ngIf="billerAmount>0">
@@ -62,56 +146,63 @@
 
         <hr class="divider">
         <div class="d-flex justify-content-start align-items-center gap-2 horizontal_scroll my-2">
-            <i class="bi bi-plus-circle" (click)="onSubmit(route.ADDBILLS)" style="color: #29479e; font-size: 30px;"></i>
+            <i class="bi bi-plus-circle" (click)="onSubmit(route.ADDBILLS)"
+                style="color: #29479e; font-size: 30px;"></i>
             <div class="biller-list" *ngFor="let item of selectedBillerDetails ">
-                <img class="biller-logo" src="{{item.userLogo}}">
+                <img class="biller-logo" src="{{item.userLogo}}"  alt="userLogo">
             </div>
         </div>
-     </div>
-<!-- subscriptions-container -->
-     <div class="subscriptions-container">
-        <div class="subscriptions-header">{{literal.subscriptions}}</div>
+    </div>
+    <!-- subscriptions-container -->
+    <div class="subscriptions-container">
+        <div class="subscriptions-header" i18n="@@subscriptions_header">{{literal.subscriptions}}</div>
         <hr class="divider">
         <div class="d-flex justify-content-start align-items-center gap-2 horizontal_scroll my-2">
             <i class="bi bi-plus-circle" style="color: #29479e; font-size: 30px;"></i>
         </div>
     </div>
-<!-- transfers-container -->
-<div class="transfers-container">
-    <div class="transfers-header">{{literal.transfers}}</div>
-    <hr class="divider">
-    <div class="d-flex justify-content-start align-items-center gap-2 horizontal_scroll my-2">
-        <i class="bi bi-plus-circle" style="color: #29479e; font-size: 30px;"></i>
+    <!-- transfers-container -->
+    <div class="transfers-container">
+        <div class="transfers-header" i18n="@@transfers_header">{{literal.transfers}}</div>
+        <hr class="divider">
+        <div class="d-flex justify-content-start align-items-center gap-2 horizontal_scroll my-2">
+            <i class="bi bi-plus-circle" style="color: #29479e; font-size: 30px;"></i>
+        </div>
     </div>
-</div>
-<!-- insights-container -->
+    <!-- insights-container -->
     <div class="insights-container">
         <div class="d-flex flex-start justify-content-between mb-1">
-            <div class="insights-header">
+            <div class="insights-header" i18n="@@insights_header">
                 {{literal.insights}}
             </div>
-            <div class="insights-explore">
+            <div class="insights-explore" i18n="@@insights_explore">
                 {{literal.insightsExplore}}
             </div>
         </div>
-        <div class="insights-txt"><i>{{literal.insightsTxt}}</i></div>
+        <div class="insights-txt"><i i18n="@@insights_text">{{literal.insightsTxt}}</i></div>
     </div>
 
 
-<div class="todo-footer overlapping-profile">
+    <footer>
+        <div class="todo-footer overlapping-profile">
 
-    <div class="text text-center my-2 px-5  ">
-        <p360-button [type]="buttonType.SUBMIT" [data]="literal.payBtn"></p360-button>
-        <!-- <p360-button  [type]="buttonType.SUBMIT" [data]="literal.payTodos" (click)="onSubmit(route.TODOMULTIPAY)"></p360-button> -->
-    </div>
-    <div class="tab-navigation">
-        <button class="tab pl-2" [class.active]="activeTab === 1" (click)="onSubmit(route.HOME)"><i class="bi bi-person bill-icon"></i>
-            <span>{{literal.accounts}}</span></button>
-        <button class="tab" [class.active]="activeTab === 2" (click)="onSubmit(route.HOME)"><i class="bi bi-currency-dollar bill-icon"></i>
-            <span>{{literal.payments}}</span></button>
-        <button class="tab" [class.active]="activeTab === 3" (click)="onSubmit(route.HOME)"><i class="bi bi-files bill-icon"></i>
-            <span>{{literal.explore}}</span></button>
-        <button class="tab" [class.active]="activeTab === 4" (click)="onSubmit(route.HOME)"><i class="bi bi-grid-fill bill-icon"></i>
-            <span>{{literal.more}}</span></button>
-    </div>
-</div>
+            <div class="text text-center my-2 px-5  ">
+                <p360-button [type]="buttonType.SUBMIT" [data]="literal.payBtn"></p360-button>
+                <!-- <p360-button  [type]="buttonType.SUBMIT" [data]="literal.payTodos" (click)="onSubmit(route.TODOMULTIPAY)"></p360-button> -->
+            </div>
+            <div class="tab-navigation">
+                <button class="tab pl-2" [class.active]="activeTab === 1" (click)="onSubmit(route.HOME)"><i
+                    class="bi bi-person bill-icon"></i>
+                    <span i18n="@@nav_accounts">{{literal.accounts}}</span></button>
+                    <button class="tab" [class.active]="activeTab === 2" (click)="onSubmit(route.HOME)"><i
+                        class="bi bi-currency-dollar bill-icon"></i>
+                        <span i18n="@@nav_payments">{{literal.payments}}</span></button>
+                        <button class="tab" [class.active]="activeTab === 3" (click)="onSubmit(route.HOME)"><i
+                            class="bi bi-files bill-icon"></i>
+                            <span i18n="@@nav_explore">{{literal.explore}}</span></button>
+                            <button class="tab" [class.active]="activeTab === 4" (click)="onSubmit(route.HOME)"><i
+                                class="bi bi-grid-fill bill-icon"></i>
+                                <span i18n="@@nav_more">{{literal.more}}</span></button>
+                            </div>
+                        </div>
+                    </footer>

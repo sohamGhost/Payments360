@@ -1,18 +1,24 @@
 <app-header [data]="header.authenticate"></app-header>
 
 <div class="authenticate-container">
-    <h4 class="text text-center">{{literal.authenticateTxt}}<span class="number">{{getMobile()}}</span></h4>
+    <h3 class="text text-center mb-3 ">{{literal.verify}}</h3>
+    <h4 class="text text-center">{{literal.securityCode}}&nbsp;<span class="number">{{getMobile()}}</span></h4>
+    <h6 class="text text-center">{{literal.enterMobile}}</h6>
+
     <div class="otp text text-center mb-3">
-        <input class="otp-input mb-2" type="text" autocomplete="off" placeholder="{{literal.enterOtp}}" />
+        <input class="otp-input mb-2" type="text" autocomplete="off" placeholder="{{literal.enterOtp}}"
+            [formControl]=fc />
     </div>
 
-    <div class="  resend-code hyperlink mb-1">
-        <h6 class="text text-center"><a class="otp-resend" href="#">{{literal.resendCode}}</a></h6>
-        <!-- <h6 class="text text-center"><a class="otp-resend" href="#">{{literal.phoneCall}}</a></h6> -->
+    <div class="hyperlink mb-1">
+        <h6 class="resend-code text text-center"><a class="otp-resend" (click)="clickHandler()">{{literal.resendCode}}</a></h6>
+        <div class="error-msg" *ngIf="otpMismatch">Incorrect OTP Provided!! PLEASE TRY AGAIN...</div>
     </div>
+
+    <div class="countdown-timer" *ngIf="countdownActive"><h3>Time left: {{countdown}} seconds</h3></div>
 </div>
 
 <div class="text text-center">
-    <p360-button [type]="buttonType.SUBMIT" (click)="onSubmit(route.SUCCESSFAILURE)" [data]="literal.continueBtn">
+    <p360-button [type]="buttonType.SUBMIT" (click)="getBillPayAuthenticate()" [data]="literal.continueBtn">
     </p360-button>
 </div>

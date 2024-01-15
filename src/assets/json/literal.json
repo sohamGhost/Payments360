@@ -39,7 +39,7 @@
     "arrives": "Arrives",
     "confirm": "Confirmation",
     "btnDone": "Done",
-    "authenticateTxt": "Enter then 6-digit verification code ",
+    "authenticateTxt": "Enter the 6-digit verification code sent",
     "continueBtn": "Continue",
     "resendCode": "Resend Code"
   },
@@ -220,7 +220,10 @@
     "privacypolicy": "Privacy Policy",
     "placeholder": "Main Chec...(*0723)  $4,164.98 available",
     "btnContinue": "continue",
-    "btnCancel": "Cancel"
+    "btnCancel": "Cancel",
+    "tag": "Create a Zelle® Tag",
+    "arrives": "Arrives in 1-3 days",
+    "available": "available"
   },
   "zellesetuppaymentliterals": {
     "accountSelectionText": "You need an email, U.S. mobile number, or Zelle® tag to send and receive money",
@@ -296,14 +299,34 @@
     "pendingTransactions": "Pending Transactions",
     "footerBtnTxt": "Finish Paying Kat",
     "dueTimeTxt": "Request via Zelle",
-    "zelleSuccessTxt":"You are Successfully Onboarded!!",
-   "zelleFooterBtnTxt":"Let's get Started"
+    "zelleSuccessTxt": "You are Successfully Onboarded!!",
+    "zelleFooterBtnTxt": "Let's get Started"
   },
-  "billerConfirmationLiteral":  {
-
-    "congratulationTxt":"You have finally added all the Bills.",
-
-    "finish":"Finish Add Bills"
-
-    }
+  "billerConfirmationLiteral": {
+    "congratulationTxt": "You have finally added all the Bills.",
+    "finish": "Finish Add Bills"
+  },
+  "amountToPayLiteral": {
+    "enterTheAmount": "Enter the Amount",
+    "amountToSplit": "Amount to Split",
+    "review": "Review",
+    "depositTo": "Deposit to",
+    "cancel": "Cancel",
+    "mainChecking": "Main Checking(*4738)",
+    "selfSplitMsg": "You won't be charged for your portion",
+    "moneyRequested": "Money Requested",
+    "totalRequestAmount": "Total Request Amount",
+    "confirmation": "Confirmation",
+    "depositedTo": "Deposited to",
+    "finish": "Finish",
+    "selectRecipients": "Select Recipients",
+    "transactionToSplit": "Transaction to Split",
+    "suggestedRecipients": "Suggested Recipients",
+    "add": "Add",
+    "reviewTxt": "Review the Split Request",
+    "memo": "Memo(optional)",
+    "depositTxt": "Deposit to",
+    "next":"Next",
+    "split":"Split"
+  }
 }

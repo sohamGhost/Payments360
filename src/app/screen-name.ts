@@ -22,4 +22,9 @@ export const RoutingLinks = {
   BILLERCONFIRMATION: 'billerconfirmation',
   ZELLEPAYAUTHENTICATION: 'zellepayauthentication',
   BILLPAYAUTHENTICATION: 'billpayauthentication',
+  RECENTACTIVITY:'recentactivity',
+  AMOUNTTOSPLIT:'amounttosplit',
+  SPLITPAYMENTCONFIRMATION:'splitpaymentconfirmation',
+  SPLITPAYMENT:'splitpayment',
+  SPLITREVIEW:'splitreview'
 };

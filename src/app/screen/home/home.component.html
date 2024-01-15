@@ -1,13 +1,13 @@
 <div class="home">
-    <button class="menu" (click)="onPaymentClick('biller')">Bill Payment</button>
-    <button class="menu" (click)="onPaymentClick('sender')">Send Payment</button>
-    <button class="menu" (click)="onPaymentClick('requestor')">Request Payment</button>
-    <button class="menu" (click)="onClick1('onboarding')">Add Bills</button>
+    <button class="menu" (click)="onPaymentClick('biller')" i18n="@@paying_bills">Bill Payment</button>
+    <button class="menu" (click)="onPaymentClick('sender')" i18n="@@paying_zelle_users">Send Payment</button>
+    <button class="menu" (click)="onPaymentClick('requestor')" i18n>Request Payment</button>
+    <button class="menu" (click)="onClick1('onboarding')" i18n>Add Bills</button>
     <!-- <button class="menu" (click)="onClick2('zelleonboarding')">Select Primary Account</button> -->
-    <button class="menu" (click)="onClick3('todo')">To-do</button>
-    <button class="menu" (click)="onClick4('startscreen')">Bill-Pay Onboarding</button>
-    <button class="menu" (click)="onClick5('zellestartscreen')">Zelle Onboarding</button>
-    <button class="menu" (click)="onClick6('dashboard')">Dashboard</button>
+    <button class="menu" (click)="onClick3('todo')" i18n>To-do</button>
+    <button class="menu" (click)="onClick4('startscreen')" i18n>Bill-Pay Onboarding</button>
+    <button class="menu" (click)="onClick5('zellestartscreen')" i18n>Zelle Onboarding</button>
+    <button class="menu" (click)="onClick6('dashboard')" i18n>Dashboard</button>
     <!-- <button class="menu" (click)="onSuccessScreenClick('successscreen')">Success Screen</button>
     <button class="menu" (click)="onGeneralOnboardingSuccessScreenClick('generalonboardingsuccessscreen')">Zelle Success Screen</button> -->
     <!-- <button class="menu" (click)="onfind('findmorebills')">Find More Bills</button>

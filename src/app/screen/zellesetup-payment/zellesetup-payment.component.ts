@@ -4,6 +4,7 @@ import { ButtonType } from 'src/app/common/constant/constant';
 import { RoutingLinks } from 'src/app/screen-name';
 import { ApiService } from 'src/app/service/api.service';
 import { DataService } from 'src/app/service/data.service';
+import { IAccountType, IApiData, IBillType } from 'src/app/common/interface/interface';
 
 @Component({
   selector: 'app-zellesetup-payment',
@@ -15,6 +16,7 @@ export class ZellesetupPaymentComponent implements OnInit {
   route = RoutingLinks;
   header: any = {};
   literal: any = {};
+  data:IApiData=null;
   public accountList: Array<any> = [];
 
   constructor(
@@ -29,13 +31,21 @@ export class ZellesetupPaymentComponent implements OnInit {
     });
 
     this._api
-    .getZelleSetuppaymentData()
-    .subscribe((data: any) => {
-      this.accountList = data.accountSelection.primaryAccountList;
-    });
+    .getUserData()
+    .subscribe((data:IApiData)=>{
+      this.data=data;
+      this.accountList = data.accounts;
+      console.log(this.data);
+    })
+
+    // this._api
+    // .getZelleSetuppaymentData()
+    // .subscribe((data: any) => {
+    //   this.accountList = data.accountSelection.primaryAccountList;
+    // });
 
     this._api
-    .getZelleSetuppaymentLiteralData()
+    .getUserLiteralData()
     .subscribe((data: any) => {
       this.literal = data;
     });

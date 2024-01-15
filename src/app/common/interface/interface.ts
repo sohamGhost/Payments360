@@ -1,3 +1,53 @@
+// newly revamped interface
+export interface IAccount {
+  accountId: number;
+  accountType: string;
+  accountStatus: string;
+  accountNumber: string;
+  availableBalance: string;
+  accountNickname: string;
+  preferred: string;
+};
+
+export interface IApiData {
+  email: string;
+  userName: string;
+  phone: string;
+  zelleTag: string;
+  active: string;
+  userConsent: string;
+  smsConsent: string;
+  accounts: IAccount [];
+};
+
+export interface IPayments {
+  paymentId: number;
+  senderName: string;
+  recipientName: string;
+  userLogo: string;
+  amount: string;
+  paymentStatus: string;
+  todoFlag: boolean;
+  days: number;
+  paymentAvenue: string;
+  zelleLimit: string;
+}
+
+
+export interface IContents {
+  type: string;
+  verbiage: string;
+  verbiage2: string;
+}
+
+export interface IOtpToken {
+  userName: string;
+  otp: number;
+  blnValidateFlag?: boolean;
+}
+
+
+//old interfaces
 export interface IBillType {
   accountNo: number;
   amount: number;

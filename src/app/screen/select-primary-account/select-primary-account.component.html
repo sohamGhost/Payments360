@@ -10,7 +10,7 @@
                 <input type="radio" id="accounttype" name="accounttype" value="accounttype" [checked]="(idx === 0)" />
                 <label class="account-item-type" for="accountType">{{item.accountType}}</label>
             </div>
-            <div class="account-item-no">{{item.accountNo}}</div>
+            <div class="account-item-no">************{{item.accountNumber.slice(item.accountNumber.length-4)}}</div>
         </div>
     </div>
 </div>

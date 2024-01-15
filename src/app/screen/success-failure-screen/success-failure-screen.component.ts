@@ -4,7 +4,11 @@ import { ButtonType } from 'src/app/common/constant/constant';
 import { RoutingLinks } from 'src/app/screen-name';
 import { ApiService } from 'src/app/service/api.service';
 import { DataService } from 'src/app/service/data.service';
+import Utils from 'src/assets/utilities/util';
 import Swal from 'sweetalert2';
+import { IApiData } from 'src/app/common/interface/interface';
+
+
 
   @Component({
   selector: 'app-success-failure-screen',
@@ -16,10 +20,11 @@ export class SuccessFailureScreenComponent implements OnInit {
   buttonType = ButtonType;
   model: any = {};
   radio = false;
-  data: any = {};
+  data: IApiData = null;
   literal: any = {};
   header: any = {};
   checkbox1 = false;
+  mobile: string;
   public billerList: Array<any> = [];
   public isButtonDisabled: boolean = true;
 
@@ -27,7 +32,10 @@ export class SuccessFailureScreenComponent implements OnInit {
               private _api: ApiService,
               private _data: DataService) {
 
-    this._api.getSuccessFailureData().subscribe((data: any) => { this.data = data });
+    this._api.getUserData()
+    .subscribe((data: IApiData) => { 
+      this.data = data;
+    });
 
     this._api.getSuccessFailureLiteralData().subscribe((data: any) => { this.literal = data });
 
@@ -46,6 +54,10 @@ export class SuccessFailureScreenComponent implements OnInit {
   }
   public onSubmit(routerLink): void {
     this.router.navigate([routerLink]);
+  }
+
+  public getMobile(): string {
+    return Utils.getMobile(parseInt(this.data.phone,10));
   }
 
   // Confirm() {

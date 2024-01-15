@@ -5,22 +5,24 @@ import { ButtonType } from 'src/app/common/constant/constant';
 import { Router } from '@angular/router';
 import { RoutingLinks } from 'src/app/screen-name';
 import Utils from 'src/assets/utilities/util';
-import { IAccountType, IBillType } from 'src/app/common/interface/interface';
+import { IAccountType, IApiData, IBillType } from 'src/app/common/interface/interface';
+
 @Component({
   selector: 'app-setup-payment',
   templateUrl: './setup-payment.component.html',
   styleUrls: ['./setup-payment.component.scss']
 })
 export class SetupPaymentComponent implements OnInit {
-  displayStyle = 'none';
+displayStyle = 'none';
 acountType: IAccountType[];
 bill: IBillType;
 header: any={};
 literal:any={};
+literal2:any={};
 util: Utils;
-data:any={};
+data:IApiData=null;
 model: any={};
-selectedData: any;
+selectedData: string;
 mobile: string;
 isOpen = false;
 buttonType = ButtonType;
@@ -29,7 +31,7 @@ checkbox1=false;
 checkbox2=false;
 checkbox3=false;
 isDropdownOpen = false;
-public dropDownDetails: Array<any> = [];
+public accountDetails: Array<any> = [];
 public isButtonDisabled: boolean = true;
 
   constructor(
@@ -42,14 +44,20 @@ public isButtonDisabled: boolean = true;
   }
 
   ngOnInit(): void {
+    this._api.getUserDataZelleHelp().subscribe((data:any)=>{
+      this.literal2 = data;
+      console.log(this.literal2);
+    });
+
+
    this._api
    .getUserData()
-   .subscribe((data:any)=>{
+   .subscribe((data:IApiData)=>{
      this.data=data;
-     this.dropDownDetails = data.dropDownDetails;
-     this.dropDownDetails.map((data) => {
-      if (data.selected === true) {
-        this.selectedData = data.paymentType + " " + data.balance;
+     this.accountDetails = data.accounts.filter(data => data.accountStatus === "ACTIVE");
+     this.accountDetails.map((data) => {
+      if (data.preferred === "Y") {
+        this.selectedData = data.accountNickname + "  *("+ data.accountNumber.slice(data.accountNumber.length-4) + ")  $" + data.availableBalance;
         // console.log(this.selectedData);
       }
     });
@@ -70,13 +78,13 @@ public isButtonDisabled: boolean = true;
   }
 
   public onDropDownClick(item): void {
-    item.selected = true;
-    this.dropDownDetails.map((data) => {
-      if (data.paymentType !== item.paymentType) {
-        data.selected = false;
+    item.preferred = "Y";
+    this.accountDetails.map((data) => {
+      if (data.accountNickname !== item.accountNickname) {
+        data.preferred = "N";
       }
     });
-    this.selectedData = item.paymentType+ "  " + item.balance;
+    this.selectedData = item.accountNickname + "  *("+ item.accountNumber.slice(item.accountNumber.length-4) + ")  $" + item.availableBalance;
     console.log(this.selectedData);
   }
 
@@ -89,7 +97,7 @@ public isButtonDisabled: boolean = true;
   }
 
   public getMobile(): string {
-    return Utils.getMobile(this.data.mobile);
+    return Utils.getMobile(parseInt(this.data.phone,10));
   }
 
   public cancelSelection(): void {

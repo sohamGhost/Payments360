@@ -9,7 +9,7 @@
     <div>
         <div class="radio">
             <input type="radio" [(ngModel)]="model.prop" name="prop" value="A" checked="checked"><label>
-                <h4>&nbsp;&nbsp;{{data.emailId}}</h4>
+                <h4>&nbsp;&nbsp;{{data.email}}</h4>
             </label>
         </div>
         <div class="radio">
@@ -20,8 +20,8 @@
         </div>
         <div class="radio">
             <input type="radio" [(ngModel)]="model.prop" name="prop" value="C"><label>
-                <h4>&nbsp;&nbsp;{{data.tag}}&nbsp;<i class="fa-regular fa-circle-question" (click)="openPopup()"></i>
-                </h4>
+                <h3>&nbsp;&nbsp;{{literal.tag}}&nbsp;<i class="fa-regular fa-circle-question" (click)="openPopup()"></i>
+                </h3>
             </label>
             <h6 class="handle">{{literal.handleText}}</h6>
         </div>
@@ -35,10 +35,8 @@
                             <h2>HelpIcon</h2>
                             <button class="cross-button" (click)="closePopup()">&#10005;</button>
                         </div>
-                        <h4>What contact method would you like people to use when sending you money with Zelle®? Think
-                            of it like a handle Choose where you'd like to receive your money</h4>
+                        <h4>{{literal2.verbiage}}</h4>
                     </div>
-
                 </div>
             </div>
         </div>
@@ -67,36 +65,36 @@
     <h4 class="question">{{literal.sendReceiveText}}</h4>
 
     <div class="form mb-3 col-sm-5 col-md-5 col-lg-5">
-        <div class="col-auto ">
-            <div class="input-group mb-1">
-                <input type="text" class="form-control" id="amount" readonly="readonly" (click)="isOpen = !isOpen"
-                    value={{selectedData}} cdkOverlayOrigin #trigger="cdkOverlayOrigin" /><span class="arrow-down">
-                </span>
+        <!-- <div class="col-auto "> -->
+            <div class="">
+                <div class="form-control" id="amount" (click)="isOpen = !isOpen"
+                 cdkOverlayOrigin #trigger="cdkOverlayOrigin" >{{selectedData}}&nbsp;{{literal.available}}
+                 <i class="bi bi-chevron-down"></i>
+                </div>
             </div>
-        </div>
+        <!-- </div> -->
     </div>
     <ng-template cdkConnectedOverlay [cdkConnectedOverlayOrigin]="trigger" [cdkConnectedOverlayOpen]="isOpen">
 
-        <div class="list-container list border-bottom">
+        <div class="list-container border-bottom">
             <div>{{literal.sendReceiveText}}</div>
             <button class="cross-button" (click)="isOpen = false">&#10005;</button>
         </div>
         <ul class="list">
-            <li (click)="onDropDownClick(item)" *ngFor="let item of dropDownDetails"
-                [ngClass]="item.selected  ? 'selected-list' : ''">
+            <li (click)="onDropDownClick(item)" *ngFor="let item of accountDetails"
+                [ngClass]="item.preferred === 'Y' ? 'selected-list' : ''">
                 <div class="list-container margin-bottom ">
                     <div>
-                        <div><a class="link" href="#"> <small>{{item.faster}}</small></a></div>
-                        <div *ngIf="item.selected"><small>{{literal.selected}}</small></div>
+                        <div *ngIf="item.preferred === 'Y'"><small>{{literal.selected}}</small></div>
                     </div>
-                    <div><small>{{item.arrives}}</small></div>
+                    <div>{{literal.arrives}}</div>
                 </div>
                 <div class="list-container">
                     <div>
-                        <div>{{item.paymentType}} {{item.fee}}</div>
-                        <small>{{item.paymentType}} {{item.cardNo}}</small>
+                        <div>{{item.accountNickname}}</div>
+                        <small>{{item.accountType}} *{{item.accountNumber.slice(item.accountNumber.length-4)}}</small>
                     </div>
-                    <div>{{item.balance}}</div>
+                    <div>{{item.availableBalance}}&nbsp;{{literal.available}}</div>
                 </div>
             </li>
         </ul>

@@ -1,6 +1,6 @@
 <div class="bill-pay-list-container">
-    <div *ngFor="let item of todoBillsList">
-        <div *ngIf="item.todoDue === false" class="d-flex justify-content-between align-items-center gap-2 my-3 mb-3">
+    <div *ngFor="let item of todoList">
+        <div *ngIf="item.todoFlag === false" class="d-flex justify-content-between align-items-center gap-2 my-3 mb-3">
             <input *ngIf="showButtons && !item.zelleLimit" type="checkbox" name="selectedItem"
             (change)="onSelectionChange(item)">
             <!-- <img class="biller-logo mr-2" src="{{item.userLogo}}"> -->
@@ -10,19 +10,19 @@
                 <img class="biller-logo mr-2" src="{{item.userLogo}}">
                 <div>
                     <div class="bill-recipient ellipsis">
-                        {{item.recipient}}
+                        {{item.recipientName}}
                     </div>
 
-                    <ng-template [ngIf]="item.paymentAvenue" [ngIfThen]="zelle" [ngIfElse]="billPay">
+                    <ng-template [ngIf]="item.paymentAvenue=='ZELLE'" [ngIfThen]="zelle" [ngIfElse]="billPay">
                     </ng-template>
                     <ng-template #zelle>
-                        <div class="bill-due-time ellipsis" *ngIf="!item.todoDue">
-                            {{literal.zelleDueMsg}} Zelle exp. {{item.dueTime}} days
+                        <div class="bill-due-time ellipsis" *ngIf="!item.todoFlag">
+                            {{literal.zelleDueMsg}} Zelle exp. {{item.days}} days
                         </div>
                     </ng-template>
                     <ng-template #billPay>
-                        <div class="bill-due-time ellipsis" *ngIf="!item.todoDue">
-                            Due in {{item.dueTime}} days
+                        <div class="bill-due-time ellipsis" *ngIf="!item.todoFlag">
+                            Due in {{item.days}} days
                         </div>
                     </ng-template>
                 </div>
@@ -34,10 +34,10 @@
             <!-- Div for Amount & (PayNow or ZelleLimit) -->
             <div>
                 <div class="bill-amount">
-                    -{{item.amount}}
+                    -${{item.amount}}
                 </div>
 
-                <ng-template [ngIf]="item.paymentAvenue && item.zelleLimit" [ngIfThen]="limit" [ngIfElse]="payNow">
+                <ng-template [ngIf]="item.paymentAvenue=='ZELLE' && item.zelleLimit" [ngIfThen]="limit" [ngIfElse]="payNow">
                 </ng-template>
                 <ng-template #limit>
                     <div class="bill-zelle-limit">
@@ -55,6 +55,6 @@
             </div>
 
         </div>
-        <hr *ngIf="item.todoDue === false">
+        <hr *ngIf="item.todoFlag === false">
     </div>
 </div>

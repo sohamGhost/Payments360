@@ -60,18 +60,6 @@ export class TodoComponent implements OnInit {
 
      this.fetchTodoData();
 
-    //  this.selectedItemsService.selectedItemsDueSoon$.subscribe((items) => {
-    //     this.selectedItemsDueSoon = items  ;
-    //     this.selectedItems = [...this.selectedItemsDueSoon, ...this.selectedItemsUpcoming];
-    //     console.log(this.selectedItems);
-    //  });
-
-    //  this.selectedItemsService.selectedItemsUpcoming$.subscribe((items) => {
-    //   this.selectedItemsUpcoming = items;
-    //   this.selectedItems = [...this.selectedItemsDueSoon, ...this.selectedItemsUpcoming];
-    //   console.log(this.selectedItems);
-    //  });
-
     this.selectedItemsService.selectedItems$.subscribe((item) => {
       this.selectedItems = item;
       console.log(this.selectedItems);
@@ -89,9 +77,7 @@ export class TodoComponent implements OnInit {
   private fetchTodoData(): void {
     this._api.getTodoData().subscribe((data: any) => {
       this.todoBillsList = data.todoSummmary.billPay;
-      // this.todoBillsList.forEach(item => item.userLogo = this.userLogo + item.userLogo);
       this.todoDueCount =  this.todoBillsList.filter(item => !item.todoDue).length;
-      console.log(this.todoBillsList);
     });
   }
 

@@ -39,9 +39,9 @@
   "zellesetuppaymentheader": {
     "screen1": "Choose How to Receive Money"
   },
-    "findmorebillsheader": {
-      "screen1": "Find more bills"
-    },
+  "findmorebillsheader": {
+    "screen1": "Find more bills"
+  },
   "selectaddbillsheader": {
     "screen1": "Select bills to add"
   },
@@ -51,9 +51,14 @@
   "successScreenHeader": {
     "congratulations": "Congratulations"
   },
-  "billerConfirmationHeader":  {
-
-    "congratulations":"Congratulations"
-
-     }
+  "billerConfirmationHeader": {
+    "congratulations": "Congratulations"
+  },
+  "recentActivityHeader": {
+    "recentActivity": "Recent Activity"
+  },
+  "amountToSplitHeader": {
+    "splitWithZelle":"Split with"
+  }
+  
 }

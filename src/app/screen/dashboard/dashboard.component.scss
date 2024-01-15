@@ -230,3 +230,74 @@ hr.divider
    //background-color: #edf2f514;
    margin-bottom: -25px;
  }
+
+ 
+.biller-logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-left: 3px;
+  vertical-align: middle;
+}
+
+
+.recipient-name {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+
+.bill-amount {
+  text-align: end;
+
+}
+
+.bill-status {
+
+  text-align: end;
+}
+
+.bill-paymentType-send {
+  text-align: end;
+  font-weight: bold;
+  color: red;
+  margin-right: 5px;
+}
+
+.bill-paymentType-recieve {
+  text-align: end;
+  font-weight: bold;
+  color: green;
+  margin-right: 5px;
+}
+
+.bill-paymentType-none {
+  text-align: end;
+  font-weight: bold;
+  color: black;
+  margin-right: 5px;
+
+}
+
+
+.bill-status-pending {
+  text-align: end;
+  margin-right: 5px;
+  color: orange;
+}
+
+.bill-status-schedule {
+  text-align: end;
+  margin-right: 5px;
+  color: #1ea9ff;
+}
+
+.bill-date-schedule {
+  color: #1ea9ff;
+}
+
+.recent-activity-items{
+    border-bottom: 1px solid rgb(120, 120, 120); 
+    padding: 2px;
+    background: white;
+}

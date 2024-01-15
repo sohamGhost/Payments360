@@ -1,8 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router, TitleStrategy } from '@angular/router';
-import { TranslateService } from '@ngx-translate/core';
 import { find } from 'rxjs';
 import { ButtonType } from 'src/app/common/constant/constant';
+import { IPayments } from 'src/app/common/interface/interface';
 import { RoutingLinks } from 'src/app/screen-name';
 import { ApiService } from 'src/app/service/api.service';
 import { DataService } from 'src/app/service/data.service';
@@ -22,39 +22,37 @@ export class DashboardComponent implements OnInit {
   literal: any = {};
   userLogo: string = environment.imagePath;
   searchLogo: string = environment.imagePath;
+  recentActivityLogo:string=environment.imagePath;
   public activeTab: number = 2;
   public favouritesList: Array<any> = [];
   public selectedBillerDetails: Array<any> = [];
   public todoListLength: number;
   public billerAmount: number = 0;
+
+  public recentActivityList:Array<any>=[];
+  public recentActivityLength:number;
   //public billerList: Array<any> = [];
   //billAmt: number;
   //@Input() todoListLength: number;
-  supportedLanguages = ['en-US', 'es'];
 
   constructor(
     private _api: ApiService,
     private _data: DataService,
     private _router: Router,
-    public selectedBillerService: SelectedBillerService,
-    private translateService: TranslateService
+    public selectedBillerService: SelectedBillerService
   ) {
-
-    this.translateService.addLangs(this.supportedLanguages);
-    this.translateService.setDefaultLang('en-US');
-
-    const browserlang = this.translateService.getBrowserLang();
-    this.translateService.use(browserlang);
 
   }
 
   ngOnInit(): void {
-    this._api
-    .getTodoData()
-    .pipe(find(e => e !== undefined)).subscribe((data: any) => {
-      this.todoListLength = data.todoSummmary.billPay.length;
+    // this._api
+    // .getTodoData()
+    // .pipe(find(e => e !== undefined)).subscribe((data: any) => {
+    //   this.todoListLength = data.todoSummmary.billPay.length;
+    // });
+    this._api.getBackendTodoData().subscribe((data: IPayments[]) => {
+        this.todoListLength = data.length;
     });
-    //console.log(this.todoListLength);
 
     this.selectedBillerDetails = this.selectedBillerService.selectedBillerDetails;
     console.log(this.selectedBillerDetails);
@@ -63,20 +61,21 @@ export class DashboardComponent implements OnInit {
       this.billerAmount += item.billerAmount;
       this.billerAmount = parseFloat(this.billerAmount.toFixed(2));
     });
-    console.log(this.billerAmount);
-
+    
     this._api
     .getDashboardHeaderData()
     .subscribe((data: any) => {
       this.header = data;
     });
 
-    this._api.getSpanishLiteralData()
+    this._api.getDashboardLiteralData()
     .subscribe((data: any) => {
       this.literal = data;
     });
 
   this.fetchFavouritesList();
+
+  this.fetchRecentActivityList();
   }
 
 
@@ -91,14 +90,17 @@ export class DashboardComponent implements OnInit {
       });
   }
 
-  // private fetchAddBillsList(): void {
-  //   this._api
-  //   .getOnboardingData()
-  //   .subscribe((data: any) => {
-  //     this.billerList = data.onboardingAddBills.bills;
-  //     this.billerList.forEach(item => item.userLogo = this.userLogo + item.userLogo);
-  //   });
-  // }
+
+  private fetchRecentActivityList():void{
+    this._api.getRecentActivityData()
+    .subscribe((data:any)=>{
+      this.recentActivityList=data.payments;
+      this.recentActivityList.forEach(item=>item.recentActivityLogo=this.recentActivityLogo+item.userLogo);
+      
+      this.recentActivityLength=this.recentActivityList.length;
+      console.log("RecentActivity Length:"+this.recentActivityLength)
+    });
+  }
 
   public onSubmit(routerLink): void {
     this._router.navigate([routerLink]);

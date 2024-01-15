@@ -4,6 +4,7 @@
   import { RoutingLinks } from 'src/app/screen-name';
   import { ApiService } from 'src/app/service/api.service';
   import { DataService } from 'src/app/service/data.service';
+  import { IAccount, IApiData } from 'src/app/common/interface/interface';
 
   @Component({
     selector: 'app-select-primary-account',
@@ -15,6 +16,7 @@
     route = RoutingLinks;
     header: any = {};
     literal: any = {};
+    data: IApiData = null;
     public accountList: Array<any> = [];
 
     constructor(
@@ -33,9 +35,11 @@
       });
 
       this._api
-      .getZelleOnboardingData()
-      .subscribe((data: any) => {
-        this.accountList = data.accountSelection.primaryAccountList;
+      .getUserData()
+      .subscribe((data: IApiData) => {
+        this.data=data;
+      this.accountList = data.accounts;
+      console.log(this.data);
       });
 
       this._api
