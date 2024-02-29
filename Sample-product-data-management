@@ -1,0 +1,47 @@
+import java.util.ArrayList;
+import java.util.List;
+
+public class ProductDataManager {
+    public static List<List<String>> getMatchingProducts(List<List<String>> products, List<List<String>> queries) {
+        List<List<String>> result = new ArrayList<>();
+
+        for (List<String> query : queries) {
+            String type = query.get(0);
+            String param = query.get(1);
+            List<String> matchingProducts = new ArrayList<>();
+
+            if (type.equals("Type1")) {
+                for (List<String> product : products) {
+                    if (product.get(2).equals(param)) {
+                        matchingProducts.add(product.get(0));
+                    }
+                }
+            } else if (type.equals("Type2")) {
+                int price = Integer.parseInt(param);
+                for (List<String> product : products) {
+                    int productPrice = Integer.parseInt(product.get(1));
+                    if (productPrice < price) {
+                        matchingProducts.add(product.get(0));
+                    } else {
+                        break;
+                    }
+                }
+            } else if (type.equals("Type3")) {
+                int price = Integer.parseInt(param);
+                for (int i = products.size() - 1; i >= 0; i--) {
+                    List<String> product = products.get(i);
+                    int productPrice = Integer.parseInt(product.get(1));
+                    if (productPrice > price) {
+                        matchingProducts.add(0, product.get(0));
+                    } else {
+                        break;
+                    }
+                }
+            }
+
+            result.add(matchingProducts);
+        }
+
+        return result;
+    }
+}
