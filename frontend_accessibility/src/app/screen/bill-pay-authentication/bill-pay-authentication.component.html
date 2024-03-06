@@ -1,0 +1,21 @@
+<app-header [data]="header.authenticate"></app-header>
+
+<div class="authenticate-container">
+        <h4 class="text text-center">{{literal.authenticateTxt}}<span class="number">{{getMobile()}}</span></h4>
+
+    <div class="otp text text-center mb-3">
+        <input class="otp-input mb-2" type="text" autocomplete="off" placeholder="{{literal.enterOtp}}" />
+    </div>
+
+    <div class="  resend-code hyperlink mb-1">
+        <h5 class="text text-center"><a class="otp-resend" href="#">{{literal.resendCode}}</a></h5>
+        <!-- <h6 class="text text-center"><a class="otp-resend" href="#">{{literal.phoneCall}}</a></h6> -->
+    </div>
+</div>
+
+><footer>
+    <div class="text text-center">
+      <p360-button [type]="buttonType.SUBMIT" (click)="onSubmit(route.SUCCESSFAILURE)" [data]="literal.continueBtn">
+      </p360-button>
+    </div>
+</footer>

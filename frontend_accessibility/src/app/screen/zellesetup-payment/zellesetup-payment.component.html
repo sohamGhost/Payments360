@@ -1,0 +1,24 @@
+<div class="account-parent">
+
+    <app-header [data]="header.screen1"></app-header>
+    <div class="d-flex justify-content-evenly align-items-center mb-5 gap-1 my-4 fs-6">{{literal.accountSelectionText}}</div>
+
+    <div class="account-container">
+        <div *ngFor="let item of accountList; let idx = index">
+            <div class="d-flex flew-row justify-content-start align-items-center gap-2 mt-3 ml-3 ">
+                <input type="radio" id="{{item.accountType}}" name="accounttype" value="accounttype" [checked]="(idx === 0)">
+                <label class="account-item-type" for="{{item.accountType}}" >{{item.accountType}}</label>
+            </div>
+            <div class="account-item-no">{{item.accountNo}}</div>
+        </div>
+        <div class="learnmore"><a class="learn" href="">{{literal.learnmore}}</a>
+        </div>
+    </div>
+    <div class="mbl"><a class="link" href=""><i class="bi bi-plus-circle"></i>{{literal.new}}</a></div>
+</div>
+<footer>
+    <div class="text text-center">
+        <p360-button [type]="buttonType.SUBMIT" [data]="literal.btnContinue" (click)="onSubmit(route.ZELLEPAYAUTHENTICATION)">
+        </p360-button>
+    </div>
+</footer>

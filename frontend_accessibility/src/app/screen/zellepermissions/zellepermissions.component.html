@@ -1,0 +1,39 @@
+<div class="zel">
+  <div class="card-body">
+
+    <div class="header-styling">{{header.screen1}}</div>
+    <h2 class="text text-center">{{literal.zterms}}</h2>
+
+    <label>
+      <p class="general">{{literal.zservice}}</p>
+
+      <div id="card-body" class="card-text">
+        <p>{{literal.passage}}</p>
+      </div>
+    </label>
+
+    <div class="form-check">
+
+      <!-- <input class="form-check-input" type="checkbox" id="termsAndConditions" [checked]="checkbox" (change)="checkbox = !checkbox">   -->
+      <div class="form-check">
+
+        <input class="form-check-input" type="checkbox" id="termsAndConditions" (change)="enableContinueButton($event)">
+        <label class="form-check-label" for="termsAndConditions"> &nbsp; &nbsp;{{literal.zterm}}&nbsp;<span
+            class="tzel"><b>{{literal.tzel}}</b></span>&nbsp;{{literal.tand}}&nbsp;<span
+            class="tbill">{{literal.tbill}}</span></label>
+      </div>
+    </div>
+
+
+    <!-- <div class="d-grid gap-2 col-12 mx-auto" > -->
+    <!-- <p360-button [type]="buttonType.SUBMIT" [data]="literal.btnContinue" [disabled]="!checkbox"></p360-button> -->
+    <!-- </div> -->
+
+    <div class="d-grid gap-2">
+      &nbsp;
+      <div class="d-grid gap-2">
+        <button class="btn" type="button" [disabled]="continueButtonDisabled" (click)="onSubmit(route.ZELLESETUPPAYMENT)"><b>{{literal.cont}}</b></button>
+      </div>
+    </div>
+  </div>
+</div>

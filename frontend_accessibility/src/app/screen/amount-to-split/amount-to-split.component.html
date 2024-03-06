@@ -1,0 +1,61 @@
+<header>
+    <div class="d-flex flex-start align-items-center justify-content-between">
+        <div class="cancel" (click)="onSubmit(route.SPLITPAYMENT)">{{literal.cancel}}</div>
+        <div class=" header-items d-flex flex-start align-items-center justify-content-center">
+            <div class="split-amount-header">{{header.splitWithZelle}}</div>
+            <img class="zelle-icon " src="{{zelleImage}}" alt="ZelleLogo">
+        </div>
+    </div>
+</header>
+<div class="amount-split-container">
+    <div class="enter-the-amount">{{literal.enterTheAmount}}</div>
+    <hr>
+    <div class="total-recipient-container">
+        <div class="d-flex flex-start align-items-center justify-content-center ">
+            <div *ngFor="let item of amountToSplitList">
+                <img *ngIf="item.recipientName!='You'" class="recipient-logo  overlapping-profile"
+                    src="{{item.userLogo}}" alt="{{item.recipientName}}">
+            </div>
+            <div class="total-recipient">Between you and {{totalRecipient}} others</div>
+        </div>
+    </div>
+</div>
+<hr class="header-row">
+<div>
+    <div class="amount-to-split">{{literal.amountToSplit}}</div>
+    <div class="total-amount">${{transactionAmount}}</div>
+</div>
+<div class="split-amount-container">
+    <div class="split-amount-items" *ngFor="let item of amountToSplitList;let indexOfelement=index;">
+        <div class=" split-amount-item d-flex justify-content-between align-items-center gap-2 my-3 mb-3">
+            <div class=" item d-flex gap-2 flex-grow-1 align-items-center">
+                <img class="biller-logo mr-2" src="{{item.userLogo}}" alt="item.recipientName">
+                <div>
+
+                    <div class="recipient-name">{{item.recipientName}}</div>
+                    <ng-template [ngIf]="item.recipientName==='You'" [ngIfThen]="you" [ngIfElse]="recipient">
+                    </ng-template>
+                    <ng-template #you>
+                        <div class="phone-number-you"> {{literal.selfSplitMsg}}</div>
+                    </ng-template>
+                    <ng-template #recipient>
+                        <div class="phone-number"> {{item.phoneNumber}}</div>
+                    </ng-template>
+                </div>
+            </div>
+            <div class="bill-amount-container">
+                <div class="split-amount">
+                    ${{splitAmount}}
+                </div>
+            </div>
+        </div>
+        <hr *ngIf="indexOfelement !=totalRecipient">
+    </div>
+</div>
+
+<footer>
+    <div class="deposit-to">{{literal.depopsitTo}}</div>
+    <div class="main-checking">{{literal.mainChecking}}</div>
+    <p360-button [type]="buttonType.SUBMIT" [data]="literal.review" (click)="onSubmit(route.SPLITREVIEW)">
+    </p360-button>
+</footer>

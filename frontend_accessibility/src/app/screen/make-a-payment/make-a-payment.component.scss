@@ -1,0 +1,219 @@
+@import '../../../styles.scss';
+
+.user-number {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  font-size: smaller;
+  @include color-container;
+}
+
+.input-row1 {
+  display: flex;
+  justify-content: space-between;
+}
+
+.label {
+  font-weight: bold;
+
+
+}
+
+.link {
+  text-decoration: none;
+  @include  margin-bottom;
+}
+
+.input-row2 {
+  display: flex;
+  justify-content: space-between;
+}
+
+input[placeholder="Enter Amount"]{
+  color:#595959;
+}
+
+div[readonly]{
+  color:#595959;
+}
+
+p.text.text-center,p.user-number{
+  font-weight: bold;
+}
+
+
+
+#amounts{
+  color:#595959;
+}
+
+#dateTimePicker{
+  color:#595959;
+}
+
+.calender-icon-button {
+  background:none;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  height: 100%;
+  position: absolute;
+  right: 8px;;
+  bottom: 0px;
+  width: 32px;
+}
+
+.checkbox {
+  display: flex;
+  justify-content: center;
+}
+
+.form-check-input {
+  margin-right: 4px;
+}
+
+input[type=number],
+select,
+textarea,
+.form-control,
+.form-select {
+  border: 1px solid ;
+  @include color-container;
+  box-shadow: none;
+  border-radius: 2px;
+}
+
+input[type=date] {
+  border: 2px solid;
+  @include color-container;
+  cursor: pointer;
+  box-shadow: none;
+  border-radius: 2px;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.header {
+  height: 64px;
+  width: 64px;
+  border-radius: 100%;
+}
+
+.modal-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-mobile{
+  font-weight: bolder;
+}
+
+.modal-footer {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+@media (min-width:150px) and (max-width:575px) {
+  .input-row1 {
+    flex-direction: column;
+  }
+
+  .input-row2 {
+    flex-direction: column;
+  }
+
+  .form {
+    width: 100%;
+  }
+}
+.dropdown {
+  width: 100%;
+  height: 40px;
+}
+::ng-deep .cdk-overlay-pane {
+  display: flex;
+  flex-direction: column;
+  @include syntax-color;
+}
+::ng-deep .cdk-overlay-container {
+  width: 100%;
+}
+.list-container {
+  display: flex;
+  justify-content: space-between;
+}
+.border-bottom{
+  border-bottom: 2px solid ;
+  @include color-container;
+}
+.cross-button {
+  font-size:16px;
+  border: none;
+}
+.list {
+  li {
+    padding: 8px;
+    cursor: pointer;
+  }
+
+
+  li:last-child { border-bottom: none; margin-top: 2px;  }
+  list-style-type:none;
+  width: 100%;
+    padding: 8px;
+    .margin-bottom {
+      margin-bottom: 8px;
+    }
+}
+
+
+.user-profile {
+  @include important-style;
+  width: 64px;
+  height: 64px;
+  border-radius: 48px;
+}
+
+.user-subprofile {
+  left: 24px;
+  border-radius: 96px;
+  position: relative;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  top: -24px;
+  width: 24px;
+}
+
+.fa-regular{
+  @include special-text;
+}
+
+.button{
+  width: 50%;
+  display:flex;
+  justify-content: center;
+}
+.zelle-profile{
+  width: 72px;
+}
+.selected-list {
+  @include dropdown;
+}
+.arrow-down {
+  height: 0px;
+  width: 0px;
+  border: none;
+  border-top: 6px solid #000000;
+  border-left: 6px solid rgba(0,0,0,0);
+  border-right: 6px solid rgba(0,0,0,0);
+  position: relative;
+  left: -18px;
+  top: 15px;
+}

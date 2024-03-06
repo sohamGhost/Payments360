@@ -1,0 +1,36 @@
+@import '../../../styles.scss';
+
+.success-header {
+    font-size: 30px;
+}
+
+.success-header-parent {
+    padding-top: 60px;
+}
+
+.success-text {
+    font-size: 15px;
+    text-align: center;
+    padding-top: 20px;
+}
+
+.pending-transaction {
+    font-size: 18px;
+    color: #29479e;
+    padding-top: 50px;
+}
+
+.bill-pay-list-container {
+    background-color: white;
+    margin-top: 30px;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.bill-due-time{
+  color:#595959;
+}
+
+.success-container {
+    min-height: calc(100vh - 140px);
+}
