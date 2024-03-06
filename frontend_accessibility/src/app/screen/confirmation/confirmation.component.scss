@@ -1,0 +1,105 @@
+@import '../../../styles.scss';
+
+.tick-image {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 48px;
+  height: 48px;
+}
+
+h1 {
+  @include child-container;
+}
+
+.image-container {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.logo-container {
+  display: flex;
+  width: 10%; //check it
+  align-items: center;
+  justify-content: center;
+  margin: 0px 8px;
+}
+
+.bank-logo {
+  width: 48px;
+  height: 48px;
+}
+
+.user-logo {
+  @extend .bank-logo;
+  padding-left: 8px;
+}
+
+.dollar {
+  @include margin-bottom;
+  padding: 64px 32px 32px 32px;
+  font-weight: 600px;
+  text-align: center;
+  padding: 4px;
+  margin-top: 48px;
+  margin-bottom: 64px;
+  font-size: 56px;
+}
+
+.user-subprofile {
+  left: 16px;
+  border-radius: 96px;
+  position: relative;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  top: 48px;
+  width: 16px;
+}
+
+.amount-Type {
+  font-size: smaller;
+  @include text-decoration;
+  padding: 8px;
+}
+
+.account-Number {
+  font-size: smaller;
+  @include color-container;
+}
+
+.name {
+  @include color-container;
+  font-size: smaller;
+  margin: 0px;
+  padding: 8px 0px;
+  padding: 8px;
+}
+
+.text {
+  @include text-decoration;
+}
+
+.account-type {
+  padding: 8px 0px;
+  margin: 0;
+  font-weight: bold;
+
+}
+
+.account-details {
+  padding: 8px;
+}
+
+.btncontainer {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.user-account {
+  padding: 8px;
+  padding-top: 0px;
+}

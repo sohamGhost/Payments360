@@ -1,0 +1,123 @@
+.heading {
+    text-align: center;
+    color: rgb(0, 0, 0);
+    font-size: xx-large;
+    font-weight: 500;
+}
+.subHeading1{
+    padding-left: 15px;
+}
+input[type="checkbox"] {
+    width: 30px;
+    height: 16px;
+    cursor: pointer;
+    accent-color: #29479e;
+}
+.btncontainer {
+    margin-top: 245px;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    text-align: center;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+}
+.userBill {
+    column-count: 2;
+}
+.number {
+    color: #545454;
+}
+.company {
+    font-size: 18px;
+}
+.billOne {
+    border: 1px solid blueviolet;
+    border-radius: 3px;
+    background-color: aliceblue;
+    padding: 12px;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+@media (min-width:150px) and (max-width:575px) {
+    .userBill {
+        column-count: unset;
+        .btncontainer {
+            margin-top: 240px;
+       }
+   }
+}
+.rcnlogo {
+    width: 30px;
+    height: 30px;
+    border-radius: 50px;
+    height: 30px;
+    cursor: pointer;
+    position: absolute;
+    left: 42%;
+}
+.wmlogo {
+    width: 30px;
+    height: 30px;
+    border-radius: 50px;
+    height: 30px;
+    cursor: pointer;
+    position: absolute;
+    left: 74%;
+}
+.test {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+@media (min-width:150px) and (max-width:575px) {
+    .rcnlogo {
+        left: 82%;
+   }
+    .wmlogo {
+        left: 82%;
+   }
+}
+@media (min-width:575px) and (max-width:768px) {
+    .wmlogo {
+        left: 90%;
+   }
+}
+.gap-2 {
+    gap: 0.5rem!important;
+    padding: 10px;
+}
+.header-styling {
+    margin-bottom: 16px;
+    margin-top: 14px;
+    font-weight: bold;
+    font-size: 26px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.btndone{
+    // , .btncancel[_ngcontent-krq-c104] {
+        width: 100%;
+        color: rgb(255, 255, 255);
+        height: 47px;
+        background-color: #29479e;
+        margin-bottom: 2px;
+        font-size: larger;
+        font-weight:bold;
+        border-color: black;
+        border-radius: 1px;
+        cursor: pointer;
+        box-shadow: none;
+        padding-left: 18px;
+        transition: all 0.2s linear;
+   }
+    .btncancel{
+        background-color: rgb(255, 255, 255);
+        height:47px;
+        color: #29479e;
+        font-weight:bold;
+        font-size: larger;
+        padding-left: 18px;
+        border:none;
+   }

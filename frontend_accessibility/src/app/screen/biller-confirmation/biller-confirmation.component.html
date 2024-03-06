@@ -1,0 +1,39 @@
+<div class="success-container">
+
+    <div class="success-header-parent">
+        <div class="text-center">
+            <i class="bi bi-check-circle-fill " style="color: #29479e; font-size: 50px;"></i>
+        </div>
+        <div class="success-header text text-center">{{header.congratulations}}</div>
+    </div>
+    <div class="success-text">{{literal.congratulationTxt}}</div>
+    <div class="added-biller-list">
+        <!-- populating biller length -->
+
+        <div class="bill-added">{{newlyAddedBillerDetails.length}} Bills added</div>
+        <div class="recipient-logo">
+            <img class="user-profile" alt="Logo of the bill added" *ngFor="let item of newlyAddedBillerDetails" src="{{item.userLogo}}">
+        </div>
+            <!-- <ng-template [ngIf]="selectedBillerDetails.length > 0" [ngIfThen]="paidRecently" [ngIfElse]="nearYou"></ng-template>
+            <ng-template #paidRecently>
+                <div class="bill-added">{{selectedBillerDetails.length}} Bills added</div>
+                <div class="recipient-logo">
+                    <img *ngFor="let item of selectedBillerDetails" class="user-profile " src="{{item.userLogo}}">
+                </div>
+            </ng-template>
+            <ng-template #nearYou>
+                <div class="bill-added">{{selectedMoreBillerDetails.length}} bills added</div>
+                <div class="recipient-logo">
+                    <img *ngFor="let item of selectedMoreBillerDetails" class="user-profile " src="{{item.userLogo}}">
+                </div>
+            </ng-template> -->
+    </div>
+
+</div>
+
+<footer class="btn-footer">
+    <div class=" text text-center">
+        <p360-button [type]="buttonType.SUBMIT" [data]="literal.finish" (click)="onSubmit(route.DASHBOARD)">
+        </p360-button>
+    </div>
+</footer>

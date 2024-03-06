@@ -1,0 +1,111 @@
+<div class="setup-parent">
+    <div class="header-styling">{{header.screen1}}&nbsp;<a class="skip"
+            (click)="onSubmit(route.SUCCESSFAILURE)">{{literal.skip}}</a></div>
+    <h4 class="question">{{literal.zelleText}}</h4>
+    <div>
+        <div class="radio">
+            <input type="radio" [(ngModel)]="model.prop" name="prop" id="email" value="A" checked="checked">
+            <label for="email">
+                <h4>&nbsp;&nbsp;{{data.emailId}}</h4>
+            </label>
+        </div>
+        <div class="radio">
+            <input type="radio" [(ngModel)]="model.prop" name="prop" id="mobileNumber" value="B">
+            <label for="mobileNumber">
+                <h4>&nbsp;&nbsp;<span class="number">{{getMobile()}}</span>
+                </h4>
+            </label>
+        </div>
+        <div class="radio">
+            <input type="radio" [(ngModel)]="model.prop" id="zelleTag" name="prop" value="C">
+            <label for="zelleTag">
+                <h4>&nbsp;&nbsp;{{data.tag}}&nbsp;<i class="fa-regular fa-circle-question" (click)="openPopup()"></i>
+                </h4>
+            </label>
+            <h4 class="handle">{{literal.handleText}}</h4>
+        </div>
+
+        <div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':displayStyle}">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+
+                    <div class="modal-body">
+                        <div class="modal-header">
+                            <h2>HelpIcon</h2>
+                            <button class="cross-button" (click)="closePopup()">&#10005;</button>
+                        </div>
+                        <h4>What contact method would you like people to use when sending you money with Zelle®? Think
+                            of it like a handle Choose where you'd like to receive your money</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mbl"><a class="hyperlink" href="">{{literal.createText}}</a></div>
+    <div class="text-box" *ngIf="model.prop === 'A'">
+        <input type="checkbox" name="prop" value="A" [checked]="checkbox1" (change)="checkbox1 = !checkbox1"
+            class="values">&nbsp;&nbsp;{{literal.emailText1}}<a class="privacypolicy"
+            href="">{{literal.privacypolicy}}</a>{{literal.emailText2}}
+    </div>
+    <div class="text-box" *ngIf="model.prop === 'B'">
+        <input type="checkbox" name="prop" value="B" [checked]="checkbox2"
+            (change)="checkbox2 = !checkbox2">&nbsp;&nbsp;{{literal.smsText1}}<a class="privacypolicy"
+            href="">{{literal.privacypolicy}}</a>{{literal.smsText2}}
+    </div>
+    <div class="text-box" *ngIf="model.prop === 'C'">
+        <input type="checkbox" name="prop" value="C" [checked]="checkbox3"
+            (change)="checkbox3 = !checkbox3">&nbsp;&nbsp;{{literal.tagText1}}<a class="privacypolicy"
+            href="">{{literal.privacypolicy}}</a>{{literal.tagText2}}
+    </div>
+
+    <h4 class="question">{{literal.choose}}</h4>
+    <h4 class="sentence">{{literal.changeText}}</h4>
+    <h4 class="question">{{literal.sendReceiveText}}</h4>
+
+    <div class="form mb-3 col-sm-5 col-md-5 col-lg-5">
+        <div class="col-auto ">
+            <div class="input-group mb-1">
+                <input type="text" class="form-control" aria-label="amount" readonly="readonly"
+                    (click)="isOpen = !isOpen" value={{selectedData}} cdkOverlayOrigin
+                    #trigger="cdkOverlayOrigin" /><span class="arrow-down">
+                </span>
+            </div>
+        </div>
+    </div>
+    <ng-template cdkConnectedOverlay [cdkConnectedOverlayOrigin]="trigger" [cdkConnectedOverlayOpen]="isOpen">
+
+        <div class="list-container list border-bottom">
+            <div>{{literal.sendReceiveText}}</div>
+            <button class="cross-button" (click)="isOpen = false">&#10005;</button>
+        </div>
+        <ul class="list">
+            <li (click)="onDropDownClick(item)" *ngFor="let item of dropDownDetails"
+                [ngClass]="item.selected  ? 'selected-list' : ''">
+                <div class="list-container margin-bottom ">
+                    <div>
+                        <div><a class="link" href="#"> <small>{{item.faster}}</small></a></div>
+                        <div *ngIf="item.selected"><small>{{literal.selected}}</small></div>
+                    </div>
+                    <div><small>{{item.arrives}}</small></div>
+                </div>
+                <div class="list-container">
+                    <div>
+                        <div>{{item.paymentType}} {{item.fee}}</div>
+                        <small>{{item.paymentType}} {{item.cardNo}}</small>
+                    </div>
+                    <div>{{item.balance}}</div>
+                </div>
+            </li>
+        </ul>
+
+    </ng-template>
+</div>
+<div class="text text-center">
+    <p360-button [type]="buttonType.SUBMIT" [data]="literal.btnContinue"
+        [disabled]="!checkbox1 && !checkbox2 && !checkbox3" (click)="onSubmit(route.BILLPAYAUTHENTICATION)">
+    </p360-button>
+</div>
+<div class="text text-center">
+    <p360-button [type]="buttonType.CANCEL" [data]="literal.btnCancel" (click)="cancelSelection()"></p360-button>
+</div>

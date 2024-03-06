@@ -1,0 +1,130 @@
+@import '../../../styles.scss';
+.bills{
+    text-align: center;
+  @include  text-decoration;
+}
+.parent{
+    min-height: calc(100vh - 180px);
+}
+.pay{
+    text-align: center;
+    font-size: 18px;
+    font-weight:500;
+}
+.box{
+    border-radius: 8px;
+    // padding-right: 76px;
+    color: grey;
+    // border: 1px solid;
+}
+.network{
+    text-align: center;
+     @include text-decoration;
+    padding-right: 46px;
+    padding-top: 12px;
+    font-size: large;
+}
+
+.profiles{
+    padding-left: 246px;
+   @include color-container;
+   color: #545454;
+   font-weight: 500;
+   margin:0px 0px 7px;
+}
+.score{
+    padding-left: 258px;
+    @include color-container;
+    color: #545454;
+    font-weight: 500;
+    margin:0px 0px 7px;
+
+}
+.report{
+    padding-left: 246px;
+    text-align: start;
+    @include color-container;
+    color: #545454;
+    font-weight: 500;
+    margin:0px 0px 7px;
+}
+.service{
+   padding-left: 258px;
+   @include color-container;
+   padding-top: 8px;
+   color: #545454;
+   font-weight: 500;
+   margin:0px 0px 7px;
+
+
+}
+.easier{
+    padding-left: 258px;
+    @include color-container;
+    padding-bottom: 22px;
+    color: #545454;
+    font-weight: 500;
+    margin:0px 0px 7px;
+
+}
+.credit{
+    text-align: center;
+    @include  text-decoration;
+    padding-top: 12px;
+    padding-right: 86px;
+    font-size: large;
+    color: #545454;
+
+}
+.btncontainer {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    text-align: center;
+  }
+
+
+@media (min-width:320px) and (max-width:590px) {
+    .network{
+        text-align: center;
+        @include  text-decoration;
+        padding-right: 2px;
+        padding-top: 12px;
+        font-size: large;
+    }
+
+    .profiles{
+        padding-left: 68px;
+        @include color-container;
+    }
+    .service{
+        padding-left: 78px;
+    }
+    .easier{
+        padding-left: 78px;
+    }
+    .credit{
+        padding-right: 42px;
+    }
+    .report{
+        padding-left: 68px;
+        text-align: start;
+        // width: 340px;
+    }
+    .score{
+        padding-left: 78px;
+    }
+
+}
+.findmorebills{
+ padding: 16px;
+}
+
+.bills{
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+
+

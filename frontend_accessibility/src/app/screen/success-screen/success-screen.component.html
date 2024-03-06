@@ -1,0 +1,46 @@
+
+<div class="success-container">
+
+    <div class="success-header-parent">
+        <div class="text-center">
+            <i class="bi bi-check-circle-fill " style="color: #29479e; font-size: 50px;"></i>
+        </div>
+        <div class="success-header text text-center">{{header.congratulations}}</div>
+    </div>
+
+
+    <div class="success-text">{{literal.successTxt}}</div>
+    <h1 class="pending-transaction text text-center">{{literal.pendingTransactions}}</h1>
+
+    <div class="bill-pay-list-container d-flex justify-content-between align-items-center gap-2 my-3 mb-3">
+        <!-- Div for Recipient & DueTime -->
+        <div class="d-flex gap-2 flex-grow-1">
+            <img class="biller-logo mr-2" src="{{data.userLogo}}" alt="userLogo">
+            <div>
+                <div class="bill-recipient">
+                    {{data.recipient}}
+                </div>
+                <div class="bill-due-time ">
+                    Request via Zelle {{data.dueTime}} days ago
+                </div>
+            </div>
+        </div>
+            <!-- Add this div for spacing -->
+            <!-- <div class="flex-grow-1"></div> -->
+
+            <!-- Div for Amount & (PayNow or ZelleLimit) -->
+            <div class="bill-amount-price">
+                <div class="bill-amount">
+                    -${{data.amount}}
+                </div>
+            </div>
+    </div>
+
+</div>
+
+<footer class="btn-footer" role="contentinfo">
+    <div class=" text text-center">
+        <p360-button [type]="buttonType.SUBMIT" [data]="literal.footerBtnTxt" (click)="onSubmit(route.DASHBOARD)">
+     </p360-button>
+    </div>
+</footer>

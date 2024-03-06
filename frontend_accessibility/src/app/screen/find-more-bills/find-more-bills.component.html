@@ -1,0 +1,44 @@
+<div class="parent">
+    <h1 class="bills">{{header.screen1}}</h1>
+    <p class="pay">{{literal.pay}}</p>
+    <div class="bg-light box">
+        <div class="network">
+            <input type="checkbox" id="biller" name="" value="" [checked]="checkbox1" (change)="onCheckbox1Change()">
+
+            <label for="biller" class="network">&nbsp; {{literal.biller}}</label>
+        </div>
+        <p class="profiles">{{literal.profiles}}</p>
+
+        <p class="service">•&nbsp;{{literal.service}}</p>
+        <p class="easier">•&nbsp;{{literal.easier}}</p>
+
+
+    </div>
+
+
+
+    <div class="bg-light box">
+
+        <div class="credit">
+            <input type="checkbox" id="credit" name="" value="" [checked]="checkbox2" (change)="onCheckbox2Change()">
+            <label for="credit" class="credit">&nbsp; {{literal.credit}}</label>
+
+            <p class="report">{{literal.report}} </p>
+
+
+        </div>
+        <p class="service">•&nbsp;{{literal.creditscore}}</p>
+        <p class="score">•&nbsp;{{literal.score}}</p>
+        <p class="easier">•&nbsp;{{literal.shared}}</p>
+    </div>
+</div>
+
+
+
+<div class="btncontainer">
+    <p360-button [type]="buttonType.SUBMIT" [data]="literal.btnBills" [disabled]="!checkbox1 && !checkbox2"
+        (click)="onSubmit(route.SELECTADDBILLS)"></p360-button>
+
+    <p360-button [type]="buttonType.CANCEL" (click)="cancelSelection()" [data]="literal.btnCancel"></p360-button>
+
+</div>
