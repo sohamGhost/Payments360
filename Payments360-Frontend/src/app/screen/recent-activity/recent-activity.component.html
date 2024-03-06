@@ -1,0 +1,117 @@
+<header>
+    <div class="header-container  d-flex justify-content-between align-items-center">
+        <div><i class="bi  back-btn bi-arrow-left" (click)="onSubmit(route.DASHBOARD)"></i></div>
+        <div class="recent-activity-header">{{header.recentActivity}}</div>
+    </div>
+</header>
+
+<div class="recent-activity-container">
+    <div class="d-flex flex-start justify-content-between align-items-end mb-4">
+        <div class="mt-3 inputs d-flex flex-start align-items-end">
+            <input type="text" class="form-control" aria-label="search" placeholder="Search..." [(ngModel)]="searchTerm"
+                (input)="onSearchValueChanged()">
+            <i class="bi bi-search search-btn"></i>
+        </div>
+        <div class="filter-button-container">
+            <button class="filter-button" (click)="toggleFilterButton()">Filter</button>
+            <div *ngIf="filterButton" class="dropdown-content">
+                <div class="dropdown-item" (click)="sortByName()">Sort by name</div>
+                <div class="dropdown-item" (click)="sortByAmount()">Sort by amount</div>
+                <div class="dropdown-item" (click)="sortByDate()">Sort by date</div>
+            </div>
+        </div>
+    </div>
+    <hr class="header-row">
+    <div class="recent-activity-items" *ngFor="let item of recentActivityList">
+        <ng-container *ngIf="!searchTerm || item.recipientName.toLowerCase().startsWith(searchTerm.toLowerCase())">
+            <!-- ... (existing item display code) ... -->
+            <div (click)="onItemClick(item)" class="d-flex justify-content-between align-items-center gap-2 my-3 mb-3">
+
+                <div class="d-flex gap-2 flex-grow-1">
+                    <img class="biller-logo mr-2" src="{{item.userLogo}}" alt="{{item.recipientName}}">
+                    <div>
+                        <div class="recipient-name">{{item.recipientName}}</div>
+                        <ng-template [ngIf]="item.status==='Schedule'" [ngIfThen]="scheduleDate" [ngIfElse]="date">
+                        </ng-template>
+                        <ng-template #scheduleDate>
+                            <div class="bill-date-schedule">
+                                {{item.paymentDate}}
+                            </div>
+                        </ng-template>
+                        <ng-template #date>
+                            <div class="bill-date">
+                                {{item.paymentDate}}
+                            </div>
+                        </ng-template>
+
+                    </div>
+                </div>
+                <div class="bill-amount-container">
+                    <ng-template [ngIf]="item.paymentType==='send'" [ngIfThen]="send" [ngIfElse]="recieve">
+                    </ng-template>
+
+                    <ng-template #send>
+                        <div class="bill-paymentType-send">
+                            -${{item.transactionAmount}}
+                        </div>
+                    </ng-template>
+
+                    <ng-template #recieve>
+                        <ng-template [ngIf]="item.paymentType==='none'" [ngIfThen]="none" [ngIfElse]="recieveDefault">
+                        </ng-template>
+                    </ng-template>
+
+                    <ng-template #none>
+                        <div class="bill-paymentType-none">
+                            ${{item.transactionAmount}}
+                        </div>
+                    </ng-template>
+                    <ng-template #recieveDefault>
+                        <div class="bill-paymentType-recieve">
+                            +${{item.transactionAmount}}
+                        </div>
+                    </ng-template>
+
+
+                    <ng-template [ngIf]="item.status==='Pending'" [ngIfThen]="pending" [ngIfElse]="schedule">
+                    </ng-template>
+                    <ng-template #pending>
+                        <div class="bill-status-pending">
+                            {{item.status}}
+                        </div>
+                    </ng-template>
+                    <ng-template #schedule>
+                        <ng-template [ngIf]="item.status==='Schedule'" [ngIfThen]="schedules">
+                        </ng-template>
+                    </ng-template>
+                    <ng-template #schedules>
+                        <div class="bill-status-schedule">
+                            Edit or Cancel
+                        </div>
+                    </ng-template>
+                </div>
+            </div>
+        </ng-container>
+
+    </div>
+</div>
+
+<footer>
+
+    <div class="todo-footer overlapping-profile">
+        <div class="tab-navigation">
+            <button class="tab pl-2" [class.active]="activeTab === 1" (click)="onSubmit(route.HOME)"><i
+                    class="bi bi-person bill-icon"></i>
+                <span>{{literal.accounts}}</span></button>
+            <button class="tab" [class.active]="activeTab === 2" (click)="onSubmit(route.HOME)"><i
+                    class="bi bi-currency-dollar bill-icon"></i>
+                <span>{{literal.payments}}</span></button>
+            <button class="tab" [class.active]="activeTab === 3" (click)="onSubmit(route.HOME)"><i
+                    class="bi bi-files bill-icon"></i>
+                <span>{{literal.explore}}</span></button>
+            <button class="tab" [class.active]="activeTab === 4" (click)="onSubmit(route.HOME)"><i
+                    class="bi bi-grid-fill bill-icon"></i>
+                <span>{{literal.more}}</span></button>
+        </div>
+    </div>
+</footer>

@@ -1,0 +1,699 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en-US" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="ngb.alert.close" datatype="html">
+        <source>Close</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/src/alert/alert.ts</context>
+          <context context-type="linenumber">42,44</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.carousel.slide-number" datatype="html">
+        <source> Slide <x id="INTERPOLATION" equiv-text="*/
+  @Input("/> of <x id="INTERPOLATION_1" equiv-text="/**
+   * If `"/> </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/src/carousel/carousel.ts</context>
+          <context context-type="linenumber">157,162</context>
+        </context-group>
+        <note priority="1" from="description">Currently selected slide number read by screen reader</note>
+      </trans-unit>
+      <trans-unit id="ngb.carousel.previous" datatype="html">
+        <source>Previous</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/src/carousel/carousel.ts</context>
+          <context context-type="linenumber">181,184</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.carousel.next" datatype="html">
+        <source>Next</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/src/carousel/carousel.ts</context>
+          <context context-type="linenumber">200,202</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.datepicker.select-month" datatype="html">
+        <source>Select month</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/src/datepicker/datepicker-navigation-select.ts</context>
+          <context context-type="linenumber">41,42</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/src/datepicker/datepicker-navigation-select.ts</context>
+          <context context-type="linenumber">41,42</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.datepicker.select-year" datatype="html">
+        <source>Select year</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/src/datepicker/datepicker-navigation-select.ts</context>
+          <context context-type="linenumber">41,42</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/src/datepicker/datepicker-navigation-select.ts</context>
+          <context context-type="linenumber">41,42</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.datepicker.previous-month" datatype="html">
+        <source>Previous month</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/src/datepicker/datepicker-navigation.ts</context>
+          <context context-type="linenumber">43,46</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/src/datepicker/datepicker-navigation.ts</context>
+          <context context-type="linenumber">43,46</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.datepicker.next-month" datatype="html">
+        <source>Next month</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/src/datepicker/datepicker-navigation.ts</context>
+          <context context-type="linenumber">43,46</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/src/datepicker/datepicker-navigation.ts</context>
+          <context context-type="linenumber">43,46</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.pagination.first" datatype="html">
+        <source>««</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/src/pagination/pagination.ts</context>
+          <context context-type="linenumber">224,225</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.pagination.previous" datatype="html">
+        <source>«</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/src/pagination/pagination.ts</context>
+          <context context-type="linenumber">224,225</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.pagination.next" datatype="html">
+        <source>»</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/src/pagination/pagination.ts</context>
+          <context context-type="linenumber">224,225</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.pagination.last" datatype="html">
+        <source>»»</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/src/pagination/pagination.ts</context>
+          <context context-type="linenumber">224,225</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.pagination.first-aria" datatype="html">
+        <source>First</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/src/pagination/pagination.ts</context>
+          <context context-type="linenumber">224,226</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.pagination.previous-aria" datatype="html">
+        <source>Previous</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/src/pagination/pagination.ts</context>
+          <context context-type="linenumber">224,226</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.pagination.next-aria" datatype="html">
+        <source>Next</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/src/pagination/pagination.ts</context>
+          <context context-type="linenumber">224,225</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.pagination.last-aria" datatype="html">
+        <source>Last</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/src/pagination/pagination.ts</context>
+          <context context-type="linenumber">224,225</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.progressbar.value" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="* The maxim"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/src/progressbar/progressbar.ts</context>
+          <context context-type="linenumber">23,26</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.timepicker.HH" datatype="html">
+        <source>HH</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/src/timepicker/timepicker.ts</context>
+          <context context-type="linenumber">133,136</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.timepicker.hours" datatype="html">
+        <source>Hours</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/src/timepicker/timepicker.ts</context>
+          <context context-type="linenumber">155</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.timepicker.MM" datatype="html">
+        <source>MM</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/src/timepicker/timepicker.ts</context>
+          <context context-type="linenumber">173,176</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.timepicker.minutes" datatype="html">
+        <source>Minutes</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/src/timepicker/timepicker.ts</context>
+          <context context-type="linenumber">187,188</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.timepicker.increment-hours" datatype="html">
+        <source>Increment hours</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/src/timepicker/timepicker.ts</context>
+          <context context-type="linenumber">201,203</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.timepicker.decrement-hours" datatype="html">
+        <source>Decrement hours</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/src/timepicker/timepicker.ts</context>
+          <context context-type="linenumber">223,224</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.timepicker.increment-minutes" datatype="html">
+        <source>Increment minutes</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/src/timepicker/timepicker.ts</context>
+          <context context-type="linenumber">240,243</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.timepicker.decrement-minutes" datatype="html">
+        <source>Decrement minutes</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/src/timepicker/timepicker.ts</context>
+          <context context-type="linenumber">261,265</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.timepicker.SS" datatype="html">
+        <source>SS</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/src/timepicker/timepicker.ts</context>
+          <context context-type="linenumber">279,283</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.timepicker.seconds" datatype="html">
+        <source>Seconds</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/src/timepicker/timepicker.ts</context>
+          <context context-type="linenumber">295</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.timepicker.increment-seconds" datatype="html">
+        <source>Increment seconds</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/src/timepicker/timepicker.ts</context>
+          <context context-type="linenumber">295</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.timepicker.decrement-seconds" datatype="html">
+        <source>Decrement seconds</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/src/timepicker/timepicker.ts</context>
+          <context context-type="linenumber">295</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.timepicker.PM" datatype="html">
+        <source><x id="INTERPOLATION"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/src/timepicker/timepicker.ts</context>
+          <context context-type="linenumber">295</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.timepicker.AM" datatype="html">
+        <source><x id="INTERPOLATION"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/src/timepicker/timepicker.ts</context>
+          <context context-type="linenumber">295</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.toast.close-aria" datatype="html">
+        <source>Close</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/src/toast/toast.ts</context>
+          <context context-type="linenumber">70,71</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="todo_header" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{literal.todo}}"/></source>
+        <target>Hacer</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/screen/dashboard/dashboard.component.html</context>
+          <context context-type="linenumber">24</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="view_all" datatype="html">
+        <source>View All (<x id="INTERPOLATION" equiv-text="{{todoListLength}}"/>)</source>
+        <target>Ver todo</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/screen/dashboard/dashboard.component.html</context>
+          <context context-type="linenumber">29</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="recentactivity_header" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{literal.recentActivity}}"/></source>
+        <target>Actividad reciente</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/screen/dashboard/dashboard.component.html</context>
+          <context context-type="linenumber">34</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="autopayments_header" datatype="html">
+        <source> <x id="INTERPOLATION" equiv-text="{{literal.autoPayments}}"/> <x id="START_PARAGRAPH" ctype="x-p" equiv-text="&lt;p class=&quot;m-0&quot;&gt;"/><x id="INTERPOLATION_1" equiv-text="{{literal.autoPaymentsDuration}}"/><x id="CLOSE_PARAGRAPH" ctype="x-p" equiv-text="&lt;/p&gt;"/></source>
+        <target>Pagos Automáticos</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/screen/dashboard/dashboard.component.html</context>
+          <context context-type="linenumber">120,122</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="autopayments_duration" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{literal.autoPaymentsDuration}}"/></source>
+        <target>Próximos 30 días</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/screen/dashboard/dashboard.component.html</context>
+          <context context-type="linenumber">122</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="autopayments_manage" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{literal.manage}}"/></source>
+        <target>Administrar</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/screen/dashboard/dashboard.component.html</context>
+          <context context-type="linenumber">124</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="autopayements_text" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{literal.autoPaymentsBtnTxt}}"/></source>
+        <target>Incluir fuentes de pago externas</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/screen/dashboard/dashboard.component.html</context>
+          <context context-type="linenumber">131</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="billsandutilities_header" datatype="html">
+        <source> <x id="INTERPOLATION" equiv-text="{{literal.billsAndUtilities}}"/> </source>
+        <target>Facturas y servicios públicos</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/screen/dashboard/dashboard.component.html</context>
+          <context context-type="linenumber">137,139</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="subscriptions_header" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{literal.subscriptions}}"/></source>
+        <target>Suscripciones</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/screen/dashboard/dashboard.component.html</context>
+          <context context-type="linenumber">156</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="transfers_header" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{literal.transfers}}"/></source>
+        <target>Transferencias</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/screen/dashboard/dashboard.component.html</context>
+          <context context-type="linenumber">164</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="insights_header" datatype="html">
+        <source> <x id="INTERPOLATION" equiv-text="{{literal.insights}}"/> </source>
+        <target>Percepciones</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/screen/dashboard/dashboard.component.html</context>
+          <context context-type="linenumber">173,175</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="insights_explore" datatype="html">
+        <source> <x id="INTERPOLATION" equiv-text="{{literal.insightsExplore}}"/> </source>
+        <target>Explorar</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/screen/dashboard/dashboard.component.html</context>
+          <context context-type="linenumber">176,178</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="insights_text" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{literal.insightsTxt}}"/></source>
+        <target>Siga revisando para obtener información sobre su actividad de pago</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/screen/dashboard/dashboard.component.html</context>
+          <context context-type="linenumber">180</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="nav_accounts" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{literal.accounts}}"/></source>
+        <target>CUENTAS</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/screen/dashboard/dashboard.component.html</context>
+          <context context-type="linenumber">194</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="nav_payments" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{literal.payments}}"/></source>
+        <target>PAGOS</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/screen/dashboard/dashboard.component.html</context>
+          <context context-type="linenumber">197</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="nav_explore" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{literal.explore}}"/></source>
+        <target>EXPLORA</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/screen/dashboard/dashboard.component.html</context>
+          <context context-type="linenumber">200</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="nav_more" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{literal.more}}"/></source>
+        <target>MÁS</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/screen/dashboard/dashboard.component.html</context>
+          <context context-type="linenumber">203</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="paying_bills" datatype="html">
+        <source>Bill Payment</source>
+        <target>Pago de la factura</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/screen/home/home.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="paying_zelle_users" datatype="html">
+        <source>Send Payment</source>
+        <target>Enviar pago</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/screen/home/home.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="229849251218103243" datatype="html">
+        <source>Request Payment</source>
+        <target>Solicitar pago</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/screen/home/home.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4444511067667967527" datatype="html">
+        <source>Add Bills</source>
+        <target>Agregar facturas</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/screen/home/home.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6573168990643753612" datatype="html">
+        <source>To-do</source>
+        <target>Hacer</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/screen/home/home.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8958041003970361124" datatype="html">
+        <source>Bill-Pay Onboarding</source>
+        <target>Incorporación de pago de facturas</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/screen/home/home.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7067695930076231154" datatype="html">
+        <source>Zelle Onboarding</source>
+        <target>Incorporación de Zelle</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/screen/home/home.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6570363013146073520" datatype="html">
+        <source>Dashboard</source>
+        <target>Panel</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/screen/home/home.component.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="recent-activity_header" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{header.recentActivity}}"/></source>
+        <target>Actividad reciente</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/screen/recent-activity/recent-activity.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="filter-btn" datatype="html">
+        <source>Filter</source>
+        <target>Filtrar</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/screen/recent-activity/recent-activity.component.html</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="bill-date_schedule" datatype="html">
+        <source> <x id="INTERPOLATION" equiv-text="{{item.paymentDate}}"/> </source>
+        <target>Programado en 2 días</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/screen/recent-activity/recent-activity.component.html</context>
+          <context context-type="linenumber">36,38</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="bill_schedule" datatype="html">
+        <source> <x id="INTERPOLATION" equiv-text="{{item.paymentDate}}"/> </source>
+        <target>17 de agosto a través de Zelle</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/screen/recent-activity/recent-activity.component.html</context>
+          <context context-type="linenumber">41,43</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="payment-status_pending" datatype="html">
+        <source> <x id="INTERPOLATION" equiv-text="{{item.status}}"/> </source>
+        <target>Pendiente</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/screen/recent-activity/recent-activity.component.html</context>
+          <context context-type="linenumber">78,80</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2686026367289407714" datatype="html">
+        <source> Edit or Cancel </source>
+        <target>Editar o Cancelar</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/screen/recent-activity/recent-activity.component.html</context>
+          <context context-type="linenumber">87,89</context>
+        </context-group>
+        <note priority="1" from="description">payment-status_schedule</note>
+      </trans-unit>
+      <trans-unit id="accounts-literal" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{literal.accounts}}"/></source>
+        <target>CUENTAS</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/screen/recent-activity/recent-activity.component.html</context>
+          <context context-type="linenumber">104</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="payments-literal" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{literal.payments}}"/></source>
+        <target>PAGOS</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/screen/recent-activity/recent-activity.component.html</context>
+          <context context-type="linenumber">107</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="explore-literal" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{literal.explore}}"/></source>
+        <target>EXPLORA</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/screen/recent-activity/recent-activity.component.html</context>
+          <context context-type="linenumber">110</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="more-literal" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{literal.more}}"/></source>
+        <target>MÁS</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/screen/recent-activity/recent-activity.component.html</context>
+          <context context-type="linenumber">113</context>
+        </context-group>
+      </trans-unit>
+            <trans-unit id="ftitle-txt" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{literal.ftitle}}"/></source>
+        <target>¡Buenas noticias!</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/screen/start-screen/start-screen.component.html</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="start-screen-header" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{literal.ftext}}"/></source>
+        <target>¡Ha llegado una nueva experiencia de pago!</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/screen/start-screen/start-screen.component.html</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="second-header" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{literal.pay}}"/></source>
+        <target>Pagar personas y pagar facturas</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/screen/start-screen/start-screen.component.html</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="send-txt" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{literal.send}}"/></source>
+        <target>envía dinero con Zelle®, y administra y paga tus facturas desde aquí</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/screen/start-screen/start-screen.component.html</context>
+          <context context-type="linenumber">20</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="stitle-txt" datatype="html">
+      <target>Pagar facturas</target>
+        <source><x id="INTERPOLATION" equiv-text="{{literal.stitle}}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/screen/start-screen/start-screen.component.html</context>
+          <context context-type="linenumber">33</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="schedule-txt" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{literal.schedule}}"/></source>
+        <target>Programa tus pagos de facturas</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/screen/start-screen/start-screen.component.html</context>
+          <context context-type="linenumber">35</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="payall-txt" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{literal.payall}}"/></source>
+        <target>Pague todas sus facturas directamente desde la aplicación, y nunca más vaya al sitio de billes</target>           
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/screen/start-screen/start-screen.component.html</context>
+          <context context-type="linenumber">36</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ttitle-txt" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{literal.ttitle}}"/></source>
+        <target>Zelle®</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/screen/start-screen/start-screen.component.html</context>
+          <context context-type="linenumber">49</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="move-txt" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{literal.move}}"/></source>
+        <target>Mueve Dinero en el Movimiento</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/screen/start-screen/start-screen.component.html</context>
+          <context context-type="linenumber">51</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="simple-txt" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{literal.simple}}"/></source>
+        <target>Simple y seguro - con mucha gente que conoces</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/screen/start-screen/start-screen.component.html</context>
+          <context context-type="linenumber">52</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="nav_user" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{literal.user}}"/></source>
+        <target>Cuentas</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/screen/start-screen/start-screen.component.html</context>
+          <context context-type="linenumber">61</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="nav_payment" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{literal.payment}}"/></source>
+        <target>Pagos</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/screen/start-screen/start-screen.component.html</context>
+          <context context-type="linenumber">64</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="permission_header" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{header.screen1}}"/></source>
+        <target>Su permiso, por favor</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/screen/permissions/permissions.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="permission_title" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{literal.title}}"/></source>
+        <target>Pago 360 Condiciones de servicio</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/screen/permissions/permissions.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="permission_billpay" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{literal.billpay}}"/></source>
+        <target>Bill Pay</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/screen/permissions/permissions.component.html</context>
+          <context context-type="linenumber">25</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="permission_zelle" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{literal.zelle}}"/></source>
+        <target>Zelle®</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/screen/permissions/permissions.component.html</context>
+          <context context-type="linenumber">28</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="general-txt" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{literal.general}}"/></source>
+        <target>CONDICIONES GENERALES DE CADA SERVICIO</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/screen/permissions/permissions.component.html</context>
+          <context context-type="linenumber">36</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="passage1" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{literal.passage1}}"/></source>
+        <target>1.Introducción. Este documento de Términos de servicio (en adelante, Acuerdo) es un contrato entre usted y [Inserte la variable para el nombre de la FI] (en adelante, nosotros o nosotros) en relación con cada servicio que se describe en el resto de este acuerdo que se aplica a los servicios que utiliza de nosotros, según corresponda (cada uno, un Servicio) ofrecido a través de nuestro sitio de banca en línea o aplicaciones móviles (el sitio). El acuerdo consta de estos Términos generales para cada servicio mencionado como Términos generales), y cada conjunto de términos que siguen después de los términos generales que se aplican al servicio específico que está utilizando de nosotros. Este acuerdo se aplica a su uso del servicio y la parte del sitio a través del cual se ofrece el servicio</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/screen/permissions/permissions.component.html</context>
+          <context context-type="linenumber">39</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="passage2" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{literal.passage2}}"/></source>
+        <target>Proveedores de servicios. Le ofrecemos el servicio a través de uno o más proveedores de servicios que ha contratado para prestarle parte o la totalidad del servicio en nuestro nombre. Sin embargo, a pesar de que hayamos contratado a dicho proveedor de servicios para brindarle parte o la totalidad de su servicio, somos la fiesta del alma Algunas áreas de este Sitio pueden estar sujetas a términos y condiciones adicionales, que debe leer detenidamente antes de hacer uso de esas áreas. Dichos términos adicionales no cambiarán ni reemplaza estos Términos con respecto al uso de este Sitio, a menos que se indique expresamente lo contrario</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/screen/permissions/permissions.component.html</context>
+          <context context-type="linenumber">40</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="passage3" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{literal.zellepassage}}"/></source>
+        <target>Documento de términos de servicio Llegué un poco tarde al juego aquí, pero hay una forma alternativa y más corta de hacerlo si está interesado principalmente en hacer que Intellisense funcione. Puede extender la clase base y luego volver a declarar a los miembros desea omitir como privado. Esto generará un error de mecanografiado. Ignorar lo aclarará y no debería afectar la compilación. Esta es mi forma preferida de hacerlo cuando las cosas son simples. No hay sobrecarga real aquí o sintaxis de tipo desafiante. El único real La desventaja aquí es que agregar arriba de la clase de extensión podría evitar que reciba otros mensajes de error relacionados con la extensión incorrecta de la clase Base. La única ventaja de este enfoque sobre el enfoque aceptado de pickConstructor es que este método no genera ningún código adicional. Mientras que pickConstructor literalmente existe como una función después de la compilación que se ejecuta durante la definición de la clase</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/screen/permissions/permissions.component.html</context>
+          <context context-type="linenumber">41</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="terms-txt" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{literal.terms}}"/></source>
+        <target>He leído los términos y condiciones de Zelle® y Bill Pay.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/screen/permissions/permissions.component.html</context>
+          <context context-type="linenumber">49</context>
+        </context-group>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

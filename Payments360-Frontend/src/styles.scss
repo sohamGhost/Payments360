@@ -1,0 +1,194 @@
+@import "@angular/cdk/overlay-prebuilt";
+body {
+   //  background-color: #d1dee6;
+   background: linear-gradient(#d1dee6, white);
+    font-family: 'Calibri', 'sans-serif';
+    background-repeat: no-repeat;
+}
+
+@mixin important-style {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+@mixin child-container {
+    text-align: center;
+    height: 40px;
+}
+
+@mixin parent-container {
+
+    width: 100%;
+    color: rgb(255, 255, 255);
+    background-color: #29479e;
+    margin-bottom: 15px;
+    cursor: pointer;
+    transition: all 0.2s linear;
+
+    &:hover,
+    &.active {
+        background-color: #899cc9;
+    }
+
+}
+
+@mixin important-part {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50px;
+    border-radius: 70px;
+}
+ @mixin color-container{
+    color: gray;
+ }
+ @mixin color{
+    background-color: #d1dee6;
+ }
+ @mixin special-text{
+    color: #29479e;
+ }
+ @mixin syntax-color{
+    background-color: #eef1f3;;
+ }
+ @mixin  text-decoration{
+    color: black;
+ }
+ @mixin  margin-bottom{
+    color: #8b9bc9;
+ }
+ @mixin otp-input{
+    background-color: #d1dee6;
+    border: 2px solid #cbcbcc;
+    border-right: #544b4b;
+    border-left: #544b4b;
+    border-top: #544b4b;
+ }
+ @mixin hyper-line{
+    color: #899cc9;
+ }
+ @mixin dropdown {
+   background-color: #29479e;
+   color: white;
+ }
+
+//soham
+
+ * {
+   font-size: 14px;
+   line-height: 2.5ch;
+}
+
+.biller-logo {
+   width: 36px;
+   height: 36px;
+   border-radius: 50%;
+}
+
+.bill-pay-now {
+   color: #29479e;
+   //margin-right: 23px;
+   text-align: end;
+}
+
+.bill-zelle-limit {
+   color: rgb(163 50 57);
+}
+
+.bill-zelle-limit, .bill-amount {
+   text-align: end;
+}
+
+.bill-due-time {
+   color: grey;
+}
+
+.bill-recipient {
+   font-size: 18px;
+}
+
+.bill-amount {
+   font-size: 18px;
+   font-weight: bold;
+}
+
+.ellipsis {
+   white-space: nowrap;
+   overflow: hidden;
+   text-overflow: ellipsis;
+}
+
+.bill-amount__price {
+   min-width: 120px;
+}
+
+
+@media screen and (width < 510px) {
+   .ellipsis {
+       max-width: 160px;
+   }
+}
+
+//nandha
+
+.carousel-indicators [data-bs-target] {
+   width : 10px!important;
+   height: 10px !important;
+   border-radius: 50% !important;
+   top: 100%;
+   left: 50%;
+   transform: translate(-50%, -150%);
+ }
+
+ @media (min-width: 380px) and (max-width: 570px) {
+   .carousel-indicators [data-bs-target] {
+      width : 10px!important;
+      height: 10px !important;
+      border-radius: 50% !important;
+      top: 50%;
+      left: 15%;
+      transform: translate(-50%, -300%);
+      position:static;
+    }
+    
+
+    
+   .custom-carousel .carousel-inner .carousel-item{
+      text-align:center;
+     
+   }
+  
+ }
+
+ @media (min-width: 320px) and (max-width: 380px) {
+   .carousel-indicators [data-bs-target] {
+      width : 10px!important;
+      height: 10px !important;
+      border-radius: 50% !important;
+      top: 50%;
+      left: 15%;
+      transform: translate(-50%, -250%);
+      position:static;
+    }
+    
+
+    
+   .custom-carousel .carousel-inner .carousel-item{
+      text-align:center;
+     
+   }
+  
+ }
+ @media  (min-width: 768px) and (max-width: 980px) {
+    .carousel-indicators [data-bs-target] {
+      width : 10px!important;
+      height: 10px !important;
+      border-radius: 50% !important;
+      top: 50%;
+      left: 15%;
+      transform: translate(-50%, -350%);
+      position:static;
+    }
+ }

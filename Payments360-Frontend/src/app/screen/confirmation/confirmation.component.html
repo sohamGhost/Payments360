@@ -1,0 +1,52 @@
+<app-header [data]="header.screen4"></app-header>
+
+<div class="container">
+    <img class="tick-image" src="{{tickImage}}" alt="">
+    <img *ngIf="paymentMode !==paymentType.BILLER" class="user-subprofile" src="{{subUserLogo}}">
+    <h1 class="text text-center ">{{literal.paymentSent}}</h1>
+    <h1 class="dollar">{{amount}}</h1>
+
+    <div class="bg-light image-container">
+        <div class="logo-container">
+            <img class="bank-logo" src="{{bankLogo}}" alt="">
+        </div>
+        <div>
+           <h6 class="name">{{literal.you}}</h6>
+            <h6 class="user-account">
+                <b>{{accountDetails.paymentType}}</b>{{accountDetails.cardNo}}{{accountDetails.fee}}
+            </h6>
+        </div>
+    </div>
+    <div class="bg-light image-container">
+        <div class="logo-container">
+            <img  class="user-logo" src="{{userLogo}}" alt="">
+        </div>
+        <div class="account-details">
+            <h6 class="account-type"><b>{{accountDetails.recipient}}</b></h6>
+            <h6 class="account-Number">
+                <span *ngIf="paymentMode==paymentType.BILLER">{{literal.account}}:{{accountDetails.accountNo}}</span>
+                <span *ngIf="paymentMode!==paymentType.BILLER">{{mobile}}</span>
+            </h6>
+
+        </div>
+    </div>
+    <hr>
+
+    <nav class="navbar ">
+        <div class="container sticky-top">
+            <div class="user-date">
+                <h5 class="text">{{literal.arrives}}</h5>
+                <h6>{{myDate}}</h6>
+            </div>
+            <div class="text-end">
+                <h5 class="text">{{literal.confirm}}</h5>
+                <h6>{{accountDetails.confirmation}}</h6>
+            </div>
+        </div>
+    </nav>
+
+    <div class="btncontainer">
+        <p360-button [type]="buttonType.SUBMIT" (click)="onSubmit(route.DASHBOARD)" [data]="literal.btnDone"></p360-button>
+        <p360-button [type]="buttonType.CANCEL" (click)="onSubmit(route.OTPSCREEN)" [data]="literal.btnCancel"></p360-button>
+    </div>
+</div>

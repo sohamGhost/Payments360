@@ -1,0 +1,26 @@
+<app-header [data]="header.screen3"></app-header>
+
+<div class="container">
+    
+    <h3 class="text text-center mb-3 ">{{literal.verify}}</h3>
+    <h6 class="text text-center">{{literal.securityCode}} <span class="number">{{getMobile()}}</span></h6>
+    <h6 class="text text-center">{{literal.enterMobile}}</h6>
+
+    <div class="otp text text-center mb-3">
+        <input class="otp-input mb-2" type="text" autocomplete="off" placeholder="{{literal.enterOtp}}" />
+    </div>
+
+    <div class="hyperlink mb-1">
+        <h6 class="text text-center"><a class="otp-resend" href="#">{{literal.sms}}</a></h6>
+        <h6 class="text text-center"><a class="otp-resend" href="#">{{literal.phoneCall}}</a></h6>
+    </div>
+
+    <div class="text text-center">
+        <p360-button [type]="buttonType.SUBMIT" (click)="onSubmit(route.CONFIRMATION)" [data]="literal.verifyBtn"></p360-button>
+    </div>
+
+    <div class="text text-center">
+        <p360-button [type]="buttonType.CANCEL" (click)="onSubmit(route.MAKEAPAYMENT)" [data]="literal.backButton"></p360-button>
+    </div>
+
+</div>

@@ -1,0 +1,110 @@
+<div class="bill-parent">
+    <div class="add-bill-parent">
+        <!-----------Header--------------->
+        <app-header [data]="header.screen1"></app-header>
+
+        <!-----------Search Bar--------------->
+        <app-search-bar (searchTextChanged)="onSearchTextEntered($event)"></app-search-bar>
+
+        <div class="tab-navigation">
+            <button class="tab" [class.active]="activeTab === 1" (click)="selectTab(1)"
+                (click)="clearSelectedData();">{{literal.paidRecently}}</button>
+            <button class="tab" [class.active]="activeTab === 2" (click)="selectTab(2)"
+                (click)="clearSelectedData();">{{literal.nearYou}}</button>
+        </div>
+
+
+
+        <!----------- Populating total bills --------------->
+        <div *ngIf="activeTab === 1">
+            <div class="d-flex justify-content-around align-items-center gap-1 my-4 text-secondary">
+                {{recipientList.length}} bills&nbsp;found
+                <a (click)="onSubmit(route.FINDMOREBILLS)" class="bill-tab__color">{{literal.findMoreBills}}</a>
+            </div>
+        </div>
+
+        <div *ngIf="activeTab === 2">
+            <div class="d-flex justify-content-around align-items-center gap-1 my-4 text-secondary">
+                {{moreRecipientList.length}} bills&nbsp;found
+                <a (click)="onSubmit(route.FINDMOREBILLS)" class="bill-tab__color">{{literal.findMoreBills}}</a>
+            </div>
+        </div>
+        <!-----------Populating Bills for Paid Recently--------------->
+        <div *ngIf="activeTab === 1">
+            <div class="biller-container">
+                <div class="biller-item" *ngFor="let item of recipientList">
+                    <div *ngIf="searchText === '' || item.recipient.toLowerCase().includes(searchText)">
+                        <div class="d-flex flex-column justify-content-start align-items-center gap-2 my-3">
+                            <img class="biller-logo" src="{{item.userLogo}}" (click)="onSelectedItems($event,item)" [ngClass]="{ 'selected': item.isSelected }">
+                            <span class="biller-name">{{item.recipient}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-----------Populating Bills for Near you--------------->
+        <div *ngIf="activeTab === 2">
+            <div class="biller-container">
+                <div class="biller-item" *ngFor="let item of moreRecipientList">
+                    <div *ngIf="searchText === '' || item.recipient.toLowerCase().includes(searchText)">
+                        <div class="d-flex flex-column justify-content-start align-items-center gap-2 my-3">
+                            <img class="biller-logo" src="{{item.userLogo}}" (click)="onSelectedItems($event,item)" [ngClass]="{ 'selected': item.isSelected }">
+                            <span class="biller-name">{{item.recipient}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+    <!-----------Populating Bill Count & Biller Logo--------------->
+<footer class="app-bill-footer">
+    <div *ngIf="activeTab === 1 ">
+        <!-- Bill count -->
+
+        <div *ngIf="selectedBillerDetails.length > 0" class="d-flex justify-content-between pb-3">
+            {{selectedBillerDetails.length}} selected
+            <div>
+                <img *ngFor="let item of selectedBillerDetails" class="user-profile overlapping-profile" src="{{item.userLogo}}">
+            </div>
+        </div>
+
+        <!-- Populating Selected Biller Logos -->
+        <!-- <div>
+            <img *ngFor="let item of selectedBillerDetails" class="user-profile" src="{{item.userLogo}}">
+        </div> -->
+    </div>
+
+    <div *ngIf="activeTab === 2">
+        <!-- Bill count -->
+        <div *ngIf="selectedMoreBillerDetails.length > 0" class="d-flex justify-content-between pb-3">
+            {{selectedMoreBillerDetails.length}} selected
+            <div>
+                <img *ngFor="let item of selectedMoreBillerDetails" class="user-profile overlapping-profile" src="{{item.userLogo}}">
+            </div>
+        </div>
+
+        <!-- Populating Selected Biller Logos -->
+        <!-- <div>
+            <img *ngFor="let item of selectedMoreBillerDetails" class="user-profile" src="{{item.userLogo}}">
+        </div> -->
+    </div>
+
+    <!------------Add Bills Button--------------->
+    <div class="text text-center">
+        <p360-button [type]="buttonType.SUBMIT" [data]="literal.addBillsButton"
+            [disabled]="isButtonDisabled && (activeTab === 1 || activeTab === 2)"
+            (click)="isButtonDisabled ? null : onSubmit(route.BILLERCONFIRMATION)">
+        </p360-button>
+    </div>
+
+    <!------------Cancel Button--------------->
+    <div class="text text-center">
+        <p360-button [type]="buttonType.CANCEL" (click)="cancelSelection()" [data]="literal.btnCancel">
+        </p360-button>
+    </div>
+
+</footer>

@@ -1,0 +1,73 @@
+<div class="carousel-container">
+    <ngb-carousel class="custom-carousel" [showNavigationArrows]="false" [showNavigationIndicators]="true"
+      [interval]="5000" [keyboard]="true" [pauseOnHover]="true" [wrap]="true" >
+  
+      <ng-template ngbSlide>
+  
+        <!------------slide1--------------->
+  
+        <div class="img">
+          <img src="{{slideImage[0]}}" alt="slide1">
+          <!-- <img  class="user-logo" src="{{slideimage}}" alt=""> -->
+        </div>
+  
+        <div class="centered-first">
+          <h1 class="header"><span class="zoom" i18n="@@ftitle-txt">{{literal.ftitle}}</span></h1>
+          <p class="header-sub" i18n="@@start-screen-header">{{literal.ftext}}</p>
+        </div>
+        <div class="carousel-caption">
+          <h4 class="second-header" i18n="@@second-header">{{literal.pay}}</h4>
+          <p i18n="@@send-txt">{{literal.send}}</p>
+        </div>
+        <div class="btncontainer">
+          <p360-button [type]="buttonType.SUBMIT" [data]="literal.started" (click)="onSubmit(route.PERMISSIONS)"></p360-button>
+        </div>
+      </ng-template>
+  
+      <!------------slide2--------------->
+  
+      <ng-template ngbSlide>
+        <div class="img">
+          <img src="{{slideImage[1]}}" alt="slide2">
+        </div>
+        <h1 class="centered"><span class="zoom" i18n="@@stitle-txt">{{literal.stitle}}</span></h1>
+        <div class="carousel-caption">
+          <h4 class="second-header" i18n="@@schedule-txt">{{literal.schedule}}</h4>
+          <p i18n="@@payall-txt">{{literal.payall}}</p>
+        </div>
+        <div class="btncontainer">
+          <p360-button [type]="buttonType.SUBMIT" [data]="literal.started" (click)="onSubmit(route.PERMISSIONS)"></p360-button>
+        </div>
+      </ng-template>
+  
+      <!------------slide3--------------->
+  
+      <ng-template ngbSlide>
+        <div class="img">
+          <img src="{{slideImage[2]}}" alt="slide3">
+        </div>
+        <h1 class="centered"><span class="zoom" i18n="@@ttitle-txt">{{literal.ttitle}}</span></h1>
+        <div class="carousel-caption">
+          <h4 class="second-header" i18n="@@move-txt">{{literal.move}}</h4>
+          <p i18n="@@simple-txt">{{literal.simple}}</p>
+        </div>
+        <div class="btncontainer">
+          <p360-button [type]="buttonType.SUBMIT" [data]="literal.started" (click)="onSubmit(route.PERMISSIONS)"></p360-button>
+        </div>
+      </ng-template>
+    </ngb-carousel>
+    <div class="navbar">
+      <a href="#user" class="active"><i class="far fa-user"></i>
+        <div i18n="@@nav_user">{{literal.user}}</div>
+      </a>
+      <a href="#payment"><i class="far fa-dollar"></i>
+        <div i18n="@@nav_payment">{{literal.payment}}</div>
+      </a>
+      <a href="#explore"><i class="far fa-clone"></i>
+        <div i18n="@@nav_explore">{{literal.explore}}</div>
+      </a>
+      <a href="#more"><i class="fa fa-th-large"></i>
+        <div i18n="@@nav_more">{{literal.more}}</div>
+      </a>
+    </div>
+  </div>

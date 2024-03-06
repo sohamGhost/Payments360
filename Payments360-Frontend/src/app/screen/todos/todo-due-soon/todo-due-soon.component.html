@@ -1,0 +1,60 @@
+<!-- Populating bill pay to-do list -->
+<div class="bill-pay-list-container">
+    <div *ngFor="let item of todoList">
+        <div *ngIf="item.todoFlag === true" class="d-flex justify-content-between align-items-center gap-2 my-3 mb-3">
+            <input *ngIf="showButtons && !item.zelleLimit" type="checkbox" class="" name="selectedItem"
+                (change)="onSelectionChange(item)">
+            <!-- <img class="biller-logo mr-2" src="{{item.userLogo}}"> -->
+
+            <!-- Div for Recipient & DueTime -->
+            <div class="d-flex gap-2 flex-grow-1">
+                <img class="biller-logo mr-2" src="{{item.userLogo}}" alt="{{item.recipientName}}">
+                <div>
+                    <div class="bill-recipient ellipsis">
+                        {{item.recipientName}}
+                    </div>
+
+                    <ng-template [ngIf]="item.paymentAvenue=='ZELLE'" [ngIfThen]="zelle" [ngIfElse]="billPay">
+                    </ng-template>
+                    <ng-template #zelle>
+                        <div class="bill-due-time ellipsis" *ngIf="item.todoFlag">
+                            {{literal.zelleDueMsg}} Zelle exp. {{item.days}} days
+                        </div>
+                    </ng-template>
+                    <ng-template #billPay>
+                        <div class="bill-due-time ellipsis" *ngIf="item.todoFlag">
+                            Due in {{item.days}} days
+                        </div>
+                    </ng-template>
+                </div>
+            </div>
+
+            <!-- Add this div for spacing -->
+            <!-- <div class="flex-grow-1"></div> -->
+
+            <!-- Div for Amount & (PayNow or ZelleLimit) -->
+            <div class="bill-amount__price">
+                <div class="bill-amount">
+                    -${{item.amount}}
+                </div>
+
+                <ng-template [ngIf]="item.paymentAvenue=='ZELLE' && item.zelleLimit=='10,000.00'" [ngIfThen]="limit" [ngIfElse]="payNow">
+                </ng-template>
+                <ng-template #limit>
+                    <div class="bill-zelle-limit">
+                        {{literal.zelleLimit}}
+                    </div>
+                </ng-template>
+                <ng-template #payNow>
+                    <!-- <div class="bill-pay-now" (click)="onSubmit(route.HOME)">
+                        {{literal.payNow}}
+                    </div> -->
+                    <div class="bill-pay-now" (click)="onSubmit2(route.AMOUNTTOPAY, item.paymentAvenue ? 'sender' : 'biller')">
+                        {{literal.payNow}}
+                    </div>
+                </ng-template>
+            </div>
+        </div>
+        <hr class="mb-1" *ngIf="item.todoFlag === true">
+    </div>
+</div>
